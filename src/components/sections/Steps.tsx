@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { BrazilMapBadge } from "@/components/BrazilMapBadge";
 
 type StepsProps = {
-  openForm: () => void;
+  openForm?: () => void;
 };
 
 export function Steps({ openForm }: StepsProps) {
@@ -251,7 +251,10 @@ export function Steps({ openForm }: StepsProps) {
                   </p>
                   
                   <button
-                    onClick={openForm}
+                    onClick={() => {
+                      if (openForm) openForm();
+                      else document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-brand-teal to-[#00c3a6] hover:from-brand-teal-mid hover:to-brand-teal text-brand-navy font-bold rounded-full text-base uppercase tracking-wider shadow-[0_4px_20px_rgba(0,255,204,0.3)] hover:shadow-[0_6px_25px_rgba(0,255,204,0.5)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
                   >
                     {slide.btnText}

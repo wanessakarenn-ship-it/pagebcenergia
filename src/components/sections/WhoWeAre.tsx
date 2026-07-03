@@ -3,7 +3,7 @@ import { BrazilMapBadge } from "@/components/BrazilMapBadge";
 import { ArrowRight } from "lucide-react";
 
 type WhoWeAreProps = {
-  openForm: () => void;
+  openForm?: () => void;
 };
 
 export function WhoWeAre({ openForm }: WhoWeAreProps) {
@@ -27,7 +27,10 @@ export function WhoWeAre({ openForm }: WhoWeAreProps) {
               Com sólido histórico e liderança de mercado, o Grupo BC Energia conecta produtores e consumidores para entregar inovação e eficiência financeira. Nossa robustez operacional assegura a consistência e segurança do seu desconto mensal.
             </p>
             <button
-              onClick={openForm}
+              onClick={() => {
+                if (openForm) openForm();
+                else document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-brand-teal to-[#00c3a6] hover:from-brand-teal-mid hover:to-brand-teal text-brand-navy font-bold rounded-full text-base uppercase tracking-wider shadow-[0_4px_20px_rgba(0,255,204,0.3)] hover:shadow-[0_6px_25px_rgba(0,255,204,0.5)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               Conhecer nossa história
@@ -88,7 +91,10 @@ export function WhoWeAre({ openForm }: WhoWeAreProps) {
               Atuamos baseados em diretrizes rígidas de integridade, pioneirismo mercadológico e dedicação ao cliente. Integramos tecnologia de ponta e sustentabilidade para entregar economia pura e inteligência energética.
             </p>
             <button
-              onClick={openForm}
+              onClick={() => {
+                if (openForm) openForm();
+                else document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-brand-teal text-brand-teal hover:bg-brand-teal/10 font-bold rounded-full text-base uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] cursor-pointer"
             >
               Fale com um Especialista

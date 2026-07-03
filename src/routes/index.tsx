@@ -1,13 +1,17 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { Hero } from "@/components/sections/Hero";
 import { Qualification } from "@/components/sections/Qualification";
 import { Steps } from "@/components/sections/Steps";
+import { TwoInvoices } from "@/components/sections/TwoInvoices";
 import { Simulator } from "@/components/sections/Simulator";
+import SocialProofCarousel from "@/components/SocialProofCarousel";
+import { Eligibility } from "@/components/sections/Eligibility";
 import { WhoWeAre } from "@/components/sections/WhoWeAre";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { LeadForm } from "@/components/LeadForm";
+import { Faq } from "@/components/sections/Faq";
+import { FinalCta } from "@/components/sections/FinalCta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,36 +36,27 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const openForm = () => setIsFormOpen(true);
-
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <main className="flex-1">
-        {/* SEÇÃO 1: Carrossel Como Funciona */}
-        <Steps openForm={openForm} />
-
-        {/* SEÇÃO 2: Qualificação Para quem é */}
-        <Qualification openForm={openForm} />
-
-        {/* SEÇÃO 3: Institucional O Grupo BC */}
-        <WhoWeAre openForm={openForm} />
-
-        {/* SEÇÃO 4: Simulador Interativo */}
-        <Simulator openForm={openForm} />
+      <Header />
+      <main className="flex-1 pt-16">
+        <Hero />
+        <Qualification />
+        <Steps />
+        <TwoInvoices />
+        <Simulator />
+        <SocialProofCarousel
+          scrollToForm={() =>
+            document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" })
+          }
+        />
+        <Eligibility />
+        <WhoWeAre />
+        <Faq />
+        <FinalCta />
       </main>
       <Footer />
       <WhatsAppButton />
-
-      {/* Pop-up Lead Form Dialog for CTAs */}
-      <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
-        <DialogContent className="max-w-xl p-0 bg-transparent border-none overflow-hidden max-h-[90vh] overflow-y-auto">
-          <div className="bg-brand-navy border border-brand-teal/20 rounded-3xl p-6 relative">
-            <LeadForm />
-          </div>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }
-

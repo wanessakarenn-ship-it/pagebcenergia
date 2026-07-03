@@ -164,8 +164,8 @@
   }
 
   body {
-    background: radial-gradient(circle at 80% 20%, #0c3e40 0%, #062325 50%, #031415 100%) !important;
-    color: #ffffff !important;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 }
 

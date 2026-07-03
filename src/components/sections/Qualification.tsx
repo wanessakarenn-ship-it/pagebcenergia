@@ -2,7 +2,7 @@ import * as React from "react";
 import { BrazilMapBadge } from "@/components/BrazilMapBadge";
 
 type QualificationProps = {
-  openForm: () => void;
+  openForm?: () => void;
 };
 
 export function Qualification({ openForm }: QualificationProps) {
@@ -145,7 +145,10 @@ export function Qualification({ openForm }: QualificationProps) {
               </p>
               
               <button
-                onClick={openForm}
+                onClick={() => {
+                  if (openForm) openForm();
+                  else document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-navy border border-brand-teal/30 hover:border-brand-teal hover:bg-brand-teal hover:text-brand-navy text-brand-teal font-bold rounded-full text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-sm active:scale-[0.98]"
               >
                 {card.btnText}
