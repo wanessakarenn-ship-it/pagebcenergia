@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consórcio BC Energia — Economize até 25% na Conta de Luz</title>
+  
+  <!-- Fontes Premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --teal: #18857d;
+      --teal-light: #24d2c8;
+      --teal-glow: rgba(36, 210, 200, 0.3);
+      --navy: #242f40;
+      --navy-dark: #17202c;
+      --yellow: #f1c035;
+      --yellow-glow: rgba(241, 192, 53, 0.3);
+      --gray-light: #f4f7f6;
+      --gray-border: #e2e8f0;
+      --white: #ffffff;
+      --font-sans: 'Onest', sans-serif;
+      --font-display: 'Barlow Condensed', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .display {
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      font-weight: 900;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      z-index: 100;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .header {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 26px;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    /* Botão Principal */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      padding: 16px 32px;
+      background: var(--teal);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 14px rgba(24, 133, 125, 0.3);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(24, 133, 125, 0.4);
+      background: var(--teal-light);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn.yellow {
+      background: var(--yellow);
+      color: var(--navy);
+      box-shadow: 0 4px 14px rgba(241, 192, 53, 0.3);
+    }
+
+    .btn.yellow:hover {
+      background: #f7d265;
+      box-shadow: 0 6px 20px rgba(241, 192, 53, 0.5);
+    }
+
+    /* Seção Hero */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--teal) 100%);
+      color: var(--white);
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 15% 15%, rgba(36, 210, 200, 0.25), transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(241, 192, 53, 0.15), transparent 35%);
+      pointer-events: none;
+    }
+
+    .heroGrid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 24px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 0.95;
+      margin: 0 0 24px;
+      font-weight: 900;
+    }
+
+    .hero p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.85);
+      max-w: 600px;
+    }
+
+    .chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 32px 0;
+    }
+
+    .chip {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 13px;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .states {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .states div {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+    }
+
+    .states div+div {
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .states b {
+      display: block;
+      color: var(--yellow);
+      font-size: 34px;
+      line-height: 1;
+      font-family: var(--font-display);
+      font-weight: 900;
+    }
+
+    /* Formulário do Hero */
+    .form {
+      background: var(--white);
+      color: var(--navy);
+      border-radius: 32px;
+      padding: 40px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .form h3 {
+      font-size: 28px;
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+
+    .field-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #718096;
+      margin-top: 16px;
+      display: block;
+    }
+
+    .field {
+      width: 100%;
+      height: 48px;
+      border: 1.5px solid var(--gray-border);
+      border-radius: 12px;
+      margin-top: 6px;
+      padding: 0 16px;
+      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+      background: var(--gray-light);
+    }
+
+    .field:focus {
+      border-color: var(--teal);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(24, 133, 125, 0.1);
+    }
+
+    .file-upload {
+      border: 2px dashed var(--gray-border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      margin-top: 6px;
+      background: var(--gray-light);
+      cursor: pointer;
+      font-size: 13px;
+      color: #718096;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .file-upload:hover {
+      border-color: var(--teal);
+      background: rgba(24, 133, 125, 0.02);
+    }
+
+    /* Seções Genéricas */
+    .section {
+      padding: 100px 0;
+    }
+
+    .dark {
+      background: var(--navy-dark);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dark:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(circle at 90% 10%, rgba(36, 210, 200, 0.15), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(241, 192, 53, 0.1), transparent 40%);
+      pointer-events: none;
+    }
+
+    .center {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(24, 133, 125, 0.08);
+      color: var(--teal);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .dark .eyebrow {
+      background: rgba(241, 192, 53, 0.1);
+      color: var(--yellow);
+      border: 1px solid rgba(241, 192, 53, 0.2);
+    }
+
+    .h2 {
+      font-size: 48px;
+      line-height: 1;
+      margin: 20px 0;
+    }
+
+    .muted {
+      color: #718096;
+      font-size: 16px;
+    }
+
+    .dark .muted {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Grid de Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray-border);
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      border-color: rgba(24, 133, 125, 0.2);
+    }
+
+    .dark .card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      backdrop-filter: blur(12px);
+    }
+
+    .dark .card:hover {
+      border-color: rgba(241, 192, 53, 0.3);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      background: rgba(24, 133, 125, 0.08);
+      color: var(--teal);
+      display: grid;
+      place-items: center;
+      font-size: 26px;
+      margin-bottom: 24px;
+    }
+
+    .dark .icon {
+      background: rgba(241, 192, 53, 0.1);
+      color: var(--yellow);
+    }
+
+    /* Carrossel de Etapas */
+    .process {
+      position: relative;
+      background: #f8fafc;
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .banner {
+      margin-top: 50px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #153942 50%, var(--teal) 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+      color: var(--white);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .bannerText {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 2;
+    }
+
+    .step {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      backdrop-filter: blur(4px);
+    }
+
+    .step b {
+      font-size: 24px;
+      color: var(--yellow);
+      font-family: var(--font-display);
+    }
+
+    .banner h3 {
+      font-size: 42px;
+      line-height: 1.05;
+      margin: 32px 0 20px;
+    }
+
+    .banner p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+      margin-bottom: 36px;
+      max-w: 480px;
+    }
+
+    .orbWrap {
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03), transparent 70%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 3D Grass Pedestal e Elementos */
+    .platform-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    @keyframes float-pedestal {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .animate-float {
+      animation: float-pedestal 4s ease-in-out infinite alternate;
+    }
+
+    /* Dots do Carrossel */
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .dot {
+      width: 40px;
+      height: 10px;
+      background: var(--teal);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .dot.off {
+      width: 10px;
+      opacity: 0.25;
+    }
+
+    /* Simulador */
+    .sim {
+      background: linear-gradient(135deg, var(--teal) 0%, #1b9d93 50%, var(--teal-light) 100%);
+      border-radius: 40px;
+      padding: 50px;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      box-shadow: 0 30px 60px rgba(24, 133, 125, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .sim-content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sim h2 {
+      font-size: 46px;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .stateBtns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .stateBtns span {
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .stateBtns span:hover {
+      border-color: var(--yellow);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .stateBtns .active {
+      background: var(--yellow);
+      color: var(--navy);
+      border-color: var(--yellow);
+      box-shadow: 0 4px 14px rgba(241, 192, 53, 0.4);
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 32px;
+      padding: 36px;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .panel p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+
+    .panel p b {
+      font-size: 28px;
+      color: var(--white);
+      font-family: var(--font-display);
+    }
+
+    /* Slider Customizado */
+    .slider-container {
+      position: relative;
+      margin: 16px 0 32px;
+    }
+
+    .range-slider {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      outline: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+    }
+
+    .range-slider::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 8px;
+      cursor: pointer;
+      border-radius: 999px;
+    }
+
+    .range-slider::-webkit-slider-thumb {
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      background: var(--yellow);
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -7px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: transform 0.1s;
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .result {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .result div {
+      border-radius: 20px;
+      padding: 24px;
+      background: var(--white);
+      color: var(--navy);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .result div:nth-child(2) {
+      background: rgba(36, 47, 64, 0.7);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .result small {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #718096;
+    }
+
+    .result div:nth-child(2) small {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .big {
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--teal);
+      margin: 8px 0;
+      line-height: 1;
+      font-family: var(--font-display);
+    }
+
+    .result div:nth-child(2) .big {
+      color: var(--yellow);
+    }
+
+    /* Rodapé */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 13px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Responsividade */
+    @media (max-width: 960px) {
+      .heroGrid, .banner, .sim {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero h1 {
+        font-size: 48px;
+      }
+      .h2 {
+        font-size: 38px;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .heroGrid {
+        padding: 60px 24px;
+      }
+      .result {
+        grid-template-columns: 1fr;
+      }
+      .bannerText {
+        padding: 40px;
+      }
+      .orbWrap {
+        min-height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header">
+    <div class="logo">GRUPO<span>BC</span> ENERGIA</div>
+    <a class="btn" href="#lead-form">Quero economizar</a>
+  </div>
+</header>
+
+<section class="hero" id="lead-form">
+  <div class="wrap heroGrid">
+    <div>
+      <h1 class="display">Reduza sua conta de luz em até 25% sem instalar placas solares</h1>
+      <p>Com o Consórcio BC Energia, você usa créditos de energia renovável para pagar menos todos os meses — sem obra, sem investimento inicial e com análise gratuita da sua fatura.</p>
+      
+      <div class="chips">
+        <span class="chip">Até 25% de desconto</span>
+        <span class="chip">Contas a partir de R$ 800</span>
+        <span class="chip">Sem placas solares</span>
+        <span class="chip">Sem obra</span>
+      </div>
+      
+      <div class="states">
+        <div><b>GO</b>até 25%</div>
+        <div><b>TO</b>até 23%</div>
+        <div><b>PR</b>até 22%</div>
+      </div>
+    </div>
+    
+    <!-- Formulário Refinado -->
+    <form class="form" onsubmit="event.preventDefault(); alert('Fatura enviada para análise gratuita!');">
+      <h3 class="display">Análise gratuita da fatura</h3>
+      <p class="muted" style="font-size: 13px; margin-bottom: 12px;">Preencha os dados abaixo para simular sua economia.</p>
+      
+      <label class="field-label">Seu Nome</label>
+      <input type="text" class="field" placeholder="Nome completo" required />
+      
+      <label class="field-label">Seu WhatsApp</label>
+      <input type="tel" class="field" placeholder="(00) 00000-0000" required />
+      
+      <label class="field-label">Sua Cidade</label>
+      <input type="text" class="field" placeholder="Ex: Goiânia" required />
+      
+      <label class="field-label">Valor Médio da Conta</label>
+      <input type="number" class="field" placeholder="R$ 800" min="100" required />
+      
+      <label class="field-label">Fatura de Energia</label>
+      <div class="file-upload" onclick="document.getElementById('file-input').click();">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--teal)"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span id="file-name-text">Anexar PDF, JPG ou PNG (até 10MB)</span>
+      </div>
+      <input type="file" id="file-input" style="display:none;" onchange="updateFileName(this)" accept=".pdf,.jpg,.jpeg,.png" />
+      
+      <button type="submit" class="btn" style="width:100%; margin-top: 24px;">Enviar minha fatura</button>
+    </form>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Qualificação</span>
+      <h2 class="display h2">Veja se sua conta tem potencial de economia</h2>
+      <p class="muted">A análise é gratuita e mostra se sua unidade pode receber créditos de energia renovável pelo Consórcio BC Energia.</p>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="icon">💳</div>
+        <h3>Conta a partir de R$ 800</h3>
+        <p class="muted">O melhor potencial de economia começa em contas mensais acima de R$ 800.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📍</div>
+        <h3>Atuação em GO, TO e PR</h3>
+        <p class="muted">Economia estimada de até 25% em Goiás, até 23% em Tocantins e até 22% no Paraná.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📄</div>
+        <h3>Análise pela fatura</h3>
+        <p class="muted">A BC avalia sua UC, distribuidora, consumo e disponibilidade de créditos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 1: Carrossel do Processo de Consórcio -->
+<section class="section process">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Como funciona</span>
+      <h2 class="display h2">Consórcio BC Energia em 3 etapas</h2>
+      <p class="muted">Navegue pelas etapas para entender a geração, injeção e economia na sua fatura.</p>
+    </div>
+    
+    <div class="banner">
+      <!-- Texto do Slide (Dinâmico) -->
+      <div class="bannerText" id="carousel-text-area">
+        <span class="step"><b id="slide-num">01</b> <span id="slide-subtitle">Geração de energia</span></span>
+        <h3 class="display" id="slide-title">A BC Energia gera energia limpa para transformar sua conta em economia.</h3>
+        <p id="slide-body">O Grupo BC Energia gera energia limpa e renovável em centenas de usinas fotovoltaicas parceiras espalhadas pelo país.</p>
+        <a class="btn yellow" href="#lead-form" id="slide-btn">Energia limpa que transforma o futuro</a>
+      </div>
+      
+      <!-- Visual 3D SVG do Slide (Dinâmico) -->
+      <div class="orbWrap" id="carousel-visual-area">
+        <!-- SVG Slide 1 (Active by default) -->
+        <div class="platform-container animate-float" id="slide-svg-container">
+          <!-- O SVG será renderizado aqui via JavaScript -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Controles do Carrossel -->
+    <div class="dots" id="carousel-dots">
+      <span class="dot" onclick="setSlide(0)"></span>
+      <span class="dot off" onclick="setSlide(1)"></span>
+      <span class="dot off" onclick="setSlide(2)"></span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Processo simples</span>
+      <h2 class="display h2">Do envio da fatura ao desconto aplicado</h2>
+      <p class="muted">Você não precisa instalar equipamentos, fazer obra ou mudar sua rotina. A análise mostra o potencial de economia antes da adesão.</p>
+    </div>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🧾</div>
+        <h3>Você envia a fatura</h3>
+        <p class="muted">A equipe analisa sua UC, distribuidora e histórico de consumo.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>A BC calcula o potencial</h3>
+        <p class="muted">Apresentamos estimativa de desconto e condições aplicáveis.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✅</div>
+        <h3>A economia aparece</h3>
+        <p class="muted">Os créditos são compartilhados e geram desconto direto na fatura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 4: Simulador Interativo de Economia -->
+<section class="section">
+  <div class="wrap">
+    <div class="sim">
+      <div class="sim-content">
+        <span class="eyebrow" style="align-self: flex-start;">Simule sua economia</span>
+        <h2 class="display h2" style="color:var(--white)">Descubra quanto você pode economizar</h2>
+        <p style="color:rgba(255,255,255,0.8); margin-bottom: 12px;">Selecione seu estado e ajuste o controle deslizante com o valor médio da sua conta de luz.</p>
+        
+        <div class="stateBtns" id="sim-state-buttons">
+          <span class="active" onclick="setSimState('GO', 0.25, this)">Goiás (GO)</span>
+          <span onclick="setSimState('TO', 0.23, this)">Tocantins (TO)</span>
+          <span onclick="setSimState('PR', 0.22, this)">Paraná (PR)</span>
+        </div>
+      </div>
+      
+      <div class="panel">
+        <p>Valor médio da conta: <b id="slider-val-label">R$ 1.200</b></p>
+        
+        <div class="slider-container">
+          <input 
+            type="range" 
+            class="range-slider" 
+            id="sim-slider" 
+            min="200" 
+            max="15000" 
+            step="100" 
+            value="1200" 
+            oninput="updateSimulator(this.value)" 
+          />
+        </div>
+        
+        <div class="result">
+          <div>
+            <small>Economia estimada</small>
+            <div class="big" id="result-monthly">R$ 300</div>
+            <small id="result-percent-label">até 25% / mês</small>
+          </div>
+          <div>
+            <small>Projeção anual</small>
+            <div class="big" id="result-annual">R$ 3.600</div>
+            <small>em 12 meses</small>
+          </div>
+        </div>
+        
+        <a class="btn yellow" style="width:100%; margin-top: 24px;" href="#lead-form">Quero minha análise gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Grupo BC Energia. Todos os direitos reservados.</p>
+    <p style="margin-top: 8px; font-size: 11px; opacity: 0.6;">A economia descrita depende da análise prévia de viabilidade técnica e tarifa de consumo praticada pela distribuidora.</p>
+  </div>
+</footer>
+
+<script>
+  // ==========================================
+  // UPLOAD DE ARQUIVOS
+  // ==========================================
+  function updateFileName(input) {
+    const textSpan = document.getElementById('file-name-text');
+    if (input.files && input.files[0]) {
+      textSpan.textContent = "Fatura: " + input.files[0].name;
+      textSpan.style.color = "var(--teal)";
+      textSpan.style.fontWeight = "700";
+    } else {
+      textSpan.textContent = "Anexar PDF, JPG ou PNG (até 10MB)";
+      textSpan.style.color = "#718096";
+      textSpan.style.fontWeight = "400";
+    }
+  }
+
+  // ==========================================
+  // CARROSSEL: DADOS E LOGICA
+  // ==========================================
+  const slides = [
+    {
+      num: "01",
+      subtitle: "Geração de energia",
+      title: "A BC Energia gera energia limpa para transformar sua conta em economia.",
+      body: "O Grupo BC Energia gera energia limpa e renovável em centenas de usinas fotovoltaicas parceiras espalhadas pelo país.",
+      btn: "Energia limpa que transforma o futuro",
+      svg: `
+        <svg viewBox="0 0 280 280" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00ffa3" />
+              <stop offset="100%" stop-color="#007d4b" />
+            </linearGradient>
+            <linearGradient id="panel-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#24d2c8" />
+              <stop offset="100%" stop-color="#18857d" />
+            </linearGradient>
+          </defs>
+          <!-- Pedestal de Grama Isométrico -->
+          <polygon points="140,70 230,115 140,160 50,115" fill="url(#grass-grad)" />
+          <polygon points="50,115 140,160 140,175 50,130" fill="#205c3c" />
+          <polygon points="140,160 230,115 230,130 140,175" fill="#184a2f" />
+          
+          <!-- Placas Solares 3D -->
+          <g transform="translate(0, -10)">
+            <polygon points="90,105 130,85 150,95 110,115" fill="url(#panel-grad)" stroke="#fff" stroke-width="1.5" />
+            <line x1="110" y1="115" x2="110" y2="135" stroke="#4a5568" stroke-width="3" />
+            
+            <polygon points="135,127 175,107 195,117 155,137" fill="url(#panel-grad)" stroke="#fff" stroke-width="1.5" />
+            <line x1="155" y1="137" x2="155" y2="157" stroke="#4a5568" stroke-width="3" />
+          </g>
+          <!-- Sol Brilhante -->
+          <circle cx="140" cy="45" r="16" fill="var(--yellow)" filter="drop-shadow(0 0 10px var(--yellow))" />
+        </svg>
+      `
+    },
+    {
+      num: "02",
+      subtitle: "Injeção na Rede",
+      title: "Toda a energia limpa é injetada diretamente na rede da distribuidora local.",
+      body: "A distribuidora transforma essa energia em créditos, que são vinculados diretamente à sua conta mensal, sem necessidade de obras físicas.",
+      btn: "Energia que gera valor real",
+      svg: `
+        <svg viewBox="0 0 280 280" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00ffa3" />
+              <stop offset="100%" stop-color="#007d4b" />
+            </linearGradient>
+          </defs>
+          <polygon points="140,70 230,115 140,160 50,115" fill="url(#grass-grad)" />
+          <polygon points="50,115 140,160 140,175 50,130" fill="#205c3c" />
+          <polygon points="140,160 230,115 230,130 140,175" fill="#184a2f" />
+          
+          <!-- Poste de Alta Tensão -->
+          <g transform="translate(100, 30)">
+            <line x1="40" y1="110" x2="40" y2="15" stroke="#4a5568" stroke-width="3.5" />
+            <line x1="20" y1="35" x2="60" y2="35" stroke="#4a5568" stroke-width="2.5" />
+            <line x1="15" y1="65" x2="65" y2="65" stroke="#4a5568" stroke-width="2.5" />
+            <circle cx="20" cy="35" r="3.5" fill="var(--teal-light)" />
+            <circle cx="60" cy="35" r="3.5" fill="var(--teal-light)" />
+            <circle cx="15" cy="65" r="3.5" fill="var(--teal-light)" />
+            <circle cx="65" cy="65" r="3.5" fill="var(--teal-light)" />
+          </g>
+          <!-- Linhas de Distribuição Pulsantes -->
+          <path d="M 50,115 Q 140,140 230,115" fill="none" stroke="var(--yellow)" stroke-width="2.5" stroke-dasharray="6,4" />
+        </svg>
+      `
+    },
+    {
+      num: "03",
+      subtitle: "Economia na Conta",
+      title: "Seu desconto mensal de até 25% é creditado direto na sua fatura.",
+      body: "Você recebe a economia mensal compartilhada de forma prática e 100% digital, reduzindo custos sem custos de instalação.",
+      btn: "Quero minha análise gratuita",
+      svg: `
+        <svg viewBox="0 0 280 280" width="220" height="220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grass-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00ffa3" />
+              <stop offset="100%" stop-color="#007d4b" />
+            </linearGradient>
+            <linearGradient id="coin-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd700" />
+              <stop offset="100%" stop-color="#cc9900" />
+            </linearGradient>
+          </defs>
+          <polygon points="140,70 230,115 140,160 50,115" fill="url(#grass-grad)" />
+          <polygon points="50,115 140,160 140,175 50,130" fill="#205c3c" />
+          <polygon points="140,160 230,115 230,130 140,175" fill="#184a2f" />
+          
+          <!-- Pilha de Moedas Isométrica -->
+          <g transform="translate(105, 55)">
+            <!-- Moeda 1 -->
+            <path d="M 10,40 C 25,40 35,35 35,28 L 35,34 C 35,41 25,46 10,46 C -5,46 -15,41 -15,34 L -15,28 C -15,35 -5,40 10,40 Z" fill="#cc9900" />
+            <ellipse cx="10" cy="28" rx="25" ry="10" fill="url(#coin-grad)" stroke="#fff" stroke-width="0.5" />
+            
+            <!-- Moeda 2 -->
+            <path d="M 10,24 C 25,24 35,19 35,12 L 35,18 C 35,25 25,30 10,30 C -5,30 -15,25 -15,18 L -15,12 C -15,19 -5,24 10,24 Z" fill="#cc9900" />
+            <ellipse cx="10" cy="12" rx="25" ry="10" fill="url(#coin-grad)" stroke="#fff" stroke-width="0.5" />
+          </g>
+          
+          <!-- Selo R$ -->
+          <circle cx="165" cy="65" r="16" fill="var(--teal)" stroke="#fff" stroke-width="1.5" />
+          <text x="165" y="70" fill="#fff" font-size="13" font-weight="900" text-anchor="middle" font-family="var(--font-sans)">R$</text>
+        </svg>
+      `
+    }
+  ];
+
+  let currentSlide = 0;
+  const autoPlayTime = 7000;
+  let autoPlayTimer;
+
+  function setSlide(index) {
+    currentSlide = index;
+    
+    // Atualiza Textos
+    document.getElementById('slide-num').textContent = slides[index].num;
+    document.getElementById('slide-subtitle').textContent = slides[index].subtitle;
+    document.getElementById('slide-title').textContent = slides[index].title;
+    document.getElementById('slide-body').textContent = slides[index].body;
+    document.getElementById('slide-btn').textContent = slides[index].btn;
+    
+    // Atualiza SVG Visual
+    document.getElementById('slide-svg-container').innerHTML = slides[index].svg;
+    
+    // Atualiza Dots
+    const dots = document.querySelectorAll('#carousel-dots .dot');
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.remove('off');
+      } else {
+        dot.classList.add('off');
+      }
+    });
+
+    // Reinicia auto-play
+    resetAutoPlay();
+  }
+
+  function nextSlide() {
+    let next = (currentSlide + 1) % slides.length;
+    setSlide(next);
+  }
+
+  function resetAutoPlay() {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(nextSlide, autoPlayTime);
+  }
+
+  // Inicializa Carrossel
+  setSlide(0);
+
+  // ==========================================
+  // SIMULADOR: LOGICA E CÁLCULO
+  // ==========================================
+  let currentPct = 0.25; // GO pré-selecionado
+
+  function setSimState(stateCode, percentage, buttonElement) {
+    currentPct = percentage;
+    
+    // Altera classe ativa dos botões
+    const buttons = document.querySelectorAll('#sim-state-buttons span');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    buttonElement.classList.add('active');
+    
+    // Atualiza a visualização do simulador
+    const currentVal = document.getElementById('sim-slider').value;
+    updateSimulator(currentVal);
+  }
+
+  function updateSimulator(val) {
+    // Formata o label de entrada do slider
+    document.getElementById('slider-val-label').textContent = Number(val).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    
+    // Calcula economia mensal e anual
+    const monthlySavings = val * currentPct;
+    const annualSavings = monthlySavings * 12;
+    
+    // Formata resultados
+    document.getElementById('result-monthly').textContent = monthlySavings.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    document.getElementById('result-annual').textContent = annualSavings.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    
+    // Atualiza a label de porcentagem da caixa de resultados
+    document.getElementById('result-percent-label').textContent = `até ${Math.round(currentPct * 100)}% / mês`;
+  }
+
+  // Inicializa Simulador
+  updateSimulator(1200);
+
+</script>
+</body>
+</html>
