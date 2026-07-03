@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo BC Energia | Consórcio de Energia Sustentável</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Economize até 25% na sua conta de luz com o Consórcio de Energia Solar do Grupo BC Energia. Sem obras, sem investimento e 100% digital em Goiás, Paraná e Tocantins.">
+  <meta name="keywords" content="Grupo BC Energia, energia solar por assinatura, consorcio de energia, economizar conta de luz, energia sustentavel goias">
+  <meta name="author" content="Grupo BC Energia">
+  
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================
+       SISTEMA DE DESIGN & CONFIGURAÇÕES GERAIS
+       ========================================== */
+    :root {
+      --bg-dark-1: #031415;
+      --bg-dark-2: #062325;
+      --bg-dark-3: #0a3a3c;
+      --accent-teal: #00ffcc;
+      --accent-teal-hover: #00e6b8;
+      --accent-yellow: #ffd700;
+      --text-white: #ffffff;
+      --text-muted: #a0c4c5;
+      --card-bg: rgba(6, 35, 37, 0.6);
+      --card-border: rgba(0, 255, 204, 0.15);
+      --card-border-active: rgba(0, 255, 204, 0.4);
+      --font-family: 'Outfit', sans-serif;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-family);
+      background-color: var(--bg-dark-1);
+      color: var(--text-white);
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at 80% 20%, var(--bg-dark-3) 0%, var(--bg-dark-2) 50%, var(--bg-dark-1) 100%);
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* Background Glow Effects */
+    .bg-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .bg-glow-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--accent-teal);
+      top: -100px;
+      left: -100px;
+      animation: float-glow 20s infinite ease-in-out alternate;
+    }
+    .bg-glow-2 {
+      width: 600px;
+      height: 600px;
+      background: #0d6e70;
+      bottom: 10%;
+      right: -150px;
+      animation: float-glow 25s infinite ease-in-out alternate-reverse;
+    }
+    @keyframes float-glow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(60px, 40px) scale(1.15); }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark-1);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--bg-dark-3);
+      border-radius: 5px;
+      border: 2px solid var(--bg-dark-1);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-teal);
+    }
+
+    /* Typo Styles */
+    h1, h2, h3, h4 {
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .section-pretitle {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent-yellow);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 60%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    /* ==========================================
+       LAYOUT DE SEÇÕES (VIEWPORT SNAP / FULL SCREEN)
+       ========================================== */
+    section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      padding: 6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 255, 204, 0.05);
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Bottom Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      transition: var(--transition-smooth);
+    }
+    .scroll-indicator:hover {
+      color: var(--accent-teal);
+      opacity: 1;
+    }
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+
+    /* ==========================================
+       BOTÕES E ELEMENTOS GLOBAIS
+       ========================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--accent-teal) 0%, #00c3a6 100%);
+      color: var(--bg-dark-1);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0, 255, 204, 0.3);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    .btn:hover::before {
+      left: 100%;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(0, 255, 204, 0.5);
+      color: var(--bg-dark-1);
+    }
+    .btn:active {
+      transform: translateY(-1px);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--accent-teal);
+      color: var(--accent-teal);
+      box-shadow: none;
+    }
+    .btn-secondary:hover {
+      background: rgba(0, 255, 204, 0.1);
+      color: var(--accent-teal);
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.15);
+    }
+
+    /* Logo no Canto Superior Esquerdo de Fundo */
+    .corner-logo-container {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 10;
+      pointer-events: auto;
+    }
+    .corner-logo-container svg {
+      height: 48px;
+      width: auto;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+    }
+
+    /* MAPA DO BRASIL ESTILIZADO (CANTO SUPERIOR DIREITO FIXO RELATIVO A CADA SEÇÃO) */
+    .brazil-map-badge {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 160px;
+      height: 160px;
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.25;
+      transition: var(--transition-smooth);
+    }
+    section:hover .brazil-map-badge {
+      opacity: 0.45;
+      transform: scale(1.05);
+    }
+
+    /* Style override for the SVG text elements to look premium */
+    .brazil-map-badge text {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* ==========================================
+       SEÇÃO 1: CARROSSEL "COMO FUNCIONA"
+       ========================================== */
+    .carousel-section {
+      padding-top: 8rem; /* Espaço para o logo de canto */
+    }
+
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      height: 600px; /* Altura fixa confortável */
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: blur(10px);
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: scale(0.97) translateY(10px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 4rem;
+      gap: 3rem;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      z-index: 2;
+      pointer-events: auto;
+    }
+
+    .slide-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .slide-title-sec {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      color: var(--text-white);
+    }
+
+    .slide-body {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .slide-visual {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .slide-visual svg {
+      width: 100%;
+      max-height: 480px;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5));
+    }
+
+    /* Controles do Carrossel */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(9, 44, 46, 0.8);
+      border: 1px solid var(--accent-teal);
+      color: var(--accent-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .carousel-arrow:hover {
+      background: var(--accent-teal);
+      color: var(--bg-dark-1);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+    }
+    .carousel-arrow-left {
+      left: 1.5rem;
+    }
+    .carousel-arrow-right {
+      right: 1.5rem;
+    }
+    .carousel-arrow svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      z-index: 10;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(0, 255, 204, 0.2);
+      border: 1px solid rgba(0, 255, 204, 0.4);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .carousel-dot.active {
+      background: var(--accent-teal);
+      width: 32px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.6);
+    }
+
+    /* Floating Animations for SVGs */
+    @keyframes float-platform {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+    .isometric-group {
+      animation: float-platform 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes rotate-sun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .sun-glow {
+      transform-origin: 320px 80px;
+      animation: rotate-sun 25s linear infinite;
+    }
+
+    @keyframes pulse-light {
+      0% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+    .pulse-glow {
+      animation: pulse-light 1.5s ease-in-out infinite alternate;
+    }
+
+    /* ==========================================
+       SEÇÃO 2: QUALIFICAÇÃO "PARA QUEM É"
+       ========================================== */
+    .grid-qualificacao {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .card-qualif {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-qualif:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-teal);
+      box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15);
+    }
+
+    .card-qualif-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-yellow);
+      background: rgba(255, 215, 0, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .card-qualif-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .card-qualif-body {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .card-qualif-visual {
+      width: 100%;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .card-qualif-visual svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-qualif .btn {
+      width: 100%;
+    }
+
+    /* ==========================================
+       SEÇÃO 3: INSTITUCIONAL "GRUPO BC ENERGIA"
+       ========================================== */
+    .inst-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+    }
+
+    .inst-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .inst-row.reverse {
+      direction: rtl;
+    }
+    .inst-row.reverse .inst-content {
+      direction: ltr;
+    }
+    .inst-row.reverse .inst-visual {
+      direction: ltr;
+    }
+
+    .inst-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .inst-visual {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .inst-visual svg {
+      width: 100%;
+      max-height: 400px;
+    }
+
+    /* Totens Flutuantes da Subseção 1 */
+    .totem-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .totem-card {
+      position: absolute;
+      background: rgba(9, 44, 46, 0.85);
+      border: 1px solid var(--accent-teal);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      pointer-events: auto;
+      transition: var(--transition-smooth);
+      animation: float-pedestal 5s ease-in-out infinite alternate;
+    }
+    .totem-card:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 255, 204, 0.3);
+      border-color: var(--accent-teal);
+    }
+
+    .totem-1 {
+      top: 10%;
+      left: 0;
+      animation-delay: 0s;
+    }
+    .totem-2 {
+      bottom: 15%;
+      left: 10%;
+      animation-delay: 0.5s;
+    }
+    .totem-3 {
+      top: 30%;
+      right: -5%;
+      animation-delay: 1s;
+    }
+
+    .totem-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent-teal);
+    }
+    .totem-label {
+      font-size: 0.8rem;
+      color: var(--text-white);
+      font-weight: 500;
+    }
+
+    @keyframes float-pedestal {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* ==========================================
+       SEÇÃO 4: INTERATIVO "SIMULE SUA ECONOMIA"
+       ========================================== */
+    .sim-layout {
+      display: grid;
+      grid-template-columns: 500px 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    /* Painel do Simulador */
+    .sim-panel {
+      background: rgba(6, 35, 37, 0.7);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .sim-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-teal), var(--accent-yellow));
+    }
+
+    .sim-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .sim-group {
+      margin-bottom: 2rem;
+    }
+
+    .sim-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-yellow);
+      margin-bottom: 0.75rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    /* State Tabs */
+    .state-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      background: rgba(3, 20, 21, 0.5);
+      padding: 0.4rem;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 255, 204, 0.1);
+    }
+    .state-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.75rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+    .state-btn:hover {
+      color: var(--text-white);
+      background: rgba(0, 255, 204, 0.05);
+    }
+    .state-btn.active {
+      background: var(--accent-teal);
+      color: var(--bg-dark-1);
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+    }
+
+    /* Bill Value Box */
+    .bill-value-container {
+      background: rgba(3, 20, 21, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: var(--transition-smooth);
+    }
+    .bill-value-container:focus-within {
+      border-color: var(--accent-teal);
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
+    }
+
+    .bill-input-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .currency-symbol {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .bill-input {
+      background: transparent;
+      border: none;
+      color: var(--text-white);
+      font-size: 2.2rem;
+      font-weight: 800;
+      text-align: right;
+      width: 100%;
+      font-family: var(--font-family);
+      outline: none;
+    }
+
+    /* Custom Slider */
+    .bill-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(0, 255, 204, 0.1);
+      border-radius: 5px;
+      outline: none;
+      cursor: pointer;
+      transition: background 450ms ease-in;
+    }
+    .bill-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-teal);
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+      transition: var(--transition-smooth);
+    }
+    .bill-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    /* Result Panel */
+    .sim-result {
+      background: linear-gradient(135deg, rgba(0, 255, 204, 0.05) 0%, rgba(255, 215, 0, 0.02) 100%);
+      border: 1px solid rgba(0, 255, 204, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .result-label {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .result-value {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--accent-teal);
+      margin-bottom: 0.25rem;
+      text-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+    }
+    .result-annual {
+      font-size: 0.95rem;
+      color: var(--accent-yellow);
+      font-weight: 600;
+    }
+
+    .sim-footer {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Visualização Direta (Mapa Simulação) */
+    .sim-visual {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .sim-visual svg {
+      width: 100%;
+      max-height: 480px;
+    }
+
+    /* Interactive state highlighting inside simulator SVG */
+    .map-state-pill {
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+    .map-state-pill.active {
+      filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.6));
+    }
+
+    /* Totens flutuantes no mapa de simulação */
+    .sim-map-totem {
+      position: absolute;
+      background: rgba(3, 20, 21, 0.85);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 10px;
+      padding: 0.5rem 0.75rem;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-white);
+      transition: var(--transition-smooth);
+      pointer-events: none;
+      animation: float-pedestal 4s ease-in-out infinite alternate;
+    }
+    .sim-map-totem.active {
+      border-color: var(--accent-teal);
+      background: rgba(0, 255, 204, 0.15);
+      color: var(--accent-teal);
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+    }
+
+    .sim-totem-go {
+      top: 35%;
+      left: 45%;
+      animation-delay: 0s;
+    }
+    .sim-totem-to {
+      top: 15%;
+      left: 55%;
+      animation-delay: 0.5s;
+    }
+    .sim-totem-pr {
+      bottom: 25%;
+      left: 32%;
+      animation-delay: 1s;
+    }
+
+    /* Fluid Glowing Connection Lines */
+    .connection-line {
+      stroke-dasharray: 8 6;
+      animation: dash 30s linear infinite;
+      opacity: 0.15;
+      transition: var(--transition-smooth);
+    }
+    .connection-line.active {
+      opacity: 0.8;
+      stroke: var(--accent-teal);
+      stroke-width: 2.5px;
+      animation: dash 15s linear infinite;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -1000;
+      }
+    }
+
+    /* ==========================================
+       RESPONSIVIDADE (MOBILE & TABLET)
+       ========================================== */
+    @media (max-width: 1024px) {
+      section {
+        padding: 5rem 1.5rem;
+        min-height: auto;
+      }
+
+      .carousel-wrapper {
+        height: auto;
+        min-height: 600px;
+      }
+
+      .carousel-slide {
+        grid-template-columns: 1fr;
+        padding: 2.5rem;
+        gap: 2rem;
+      }
+
+      .slide-visual {
+        height: 300px;
+      }
+
+      .grid-qualificacao {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .inst-row {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .inst-row.reverse {
+        direction: ltr;
+      }
+      .totem-3 {
+        right: 0%;
+      }
+
+      .sim-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .sim-visual {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+      .slide-title-sec {
+        font-size: 2rem;
+      }
+      .carousel-arrow {
+        width: 44px;
+        height: 44px;
+      }
+      .carousel-arrow svg {
+        width: 18px;
+        height: 18px;
+      }
+      .sim-panel {
+        padding: 1.5rem;
+      }
+      .brazil-map-badge {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        right: 15px;
+      }
+      .corner-logo-container {
+        top: 20px;
+        left: 20px;
+      }
+      .corner-logo-container svg {
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Floaters -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Logo de Canto Fixo (Não-Header de topo) -->
+  <div class="corner-logo-container">
+    <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+      <defs>
+        <style>
+          .cls-1, .cls-2 { fill: #269e95; }
+          .cls-1, .cls-3 { fill-rule: evenodd; }
+          .cls-4 { fill: #18857e; }
+          .cls-5, .cls-3 { fill: #ffffff; } /* MUDADO PARA BRANCO PARA CONTRASTAR COM O FUNDO ESCURO */
+          .cls-6 { fill: #1b9c93; }
+        </style>
+      </defs>
+      <path class="cls-6" d="M944.47,229.39l-61.74,106.81h-30.94l61.81-106.81-18.38-31.76-43.43-75.05h30.94l61.74,106.81Z"/>
+      <path class="cls-6" d="M821,229.39l-43.36,74.98-18.38,31.83h-30.94l61.81-106.81-61.81-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-6" d="M882.73,229.39l-61.74,106.81h-30.87l61.73-106.81h-.07l-61.73-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-4" d="M944.47,443.01l-61.74,106.81h-30.94l61.81-106.81-18.38-31.76-43.43-75.05h30.94l61.74,106.81Z"/>
+      <path class="cls-4" d="M821,443.01l-43.36,74.98-18.38,31.83h-30.94l61.81-106.81-61.81-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-6" d="M758.32,229.68l-43.43,74.98-18.37,31.83h-30.87l61.73-106.81-61.73-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-4" d="M758.32,443.3l-43.43,74.98-18.37,31.76h-30.87l61.73-106.74-61.73-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-4" d="M882.73,443.01l-61.74,106.81h-30.87l61.73-106.81h-.07l-61.73-106.81h30.87l61.81,106.81Z"/>
+      <path class="cls-6" d="M1068.52,122.57l-124.05,213.63-30.87-.07,61.95-106.67,62.03-106.89h30.94Z"/>
+      <path class="cls-4" d="M1067.5,549.83h-30.87l-61.44-106.74-61.59-106.96,30.87.07,61.59,106.96,61.44,106.67Z"/>
+      <path class="cls-6" d="M1130.25,122.72l-123.98,213.63-30.94-.07,62.02-106.67,61.96-106.89h30.94Z"/>
+      <path class="cls-4" d="M1129.23,549.97h-30.8l-61.52-106.74-61.59-106.96,30.94.07,61.52,106.89,61.44,106.74Z"/>
+      <path class="cls-6" d="M1192.06,122.86l-124.05,213.63-30.87-.07,61.95-106.67,62.03-106.89h30.94Z"/>
+      <path class="cls-4" d="M1190.97,550.04h-30.8l-61.44-106.74-61.59-106.89,30.87.07,61.59,106.89,61.37,106.67Z"/>
+      <path class="cls-6" d="M1254.73,122.86l-124.05,213.63-30.87-.07,61.96-106.67,62.02-106.89h30.94Z"/>
+      <path class="cls-4" d="M1253.72,550.04h-30.87l-61.44-106.74-61.59-106.89,30.87.07,61.59,106.89,61.44,106.67Z"/>
+      <path class="cls-5" d="M343.54,825.38c-57.96,0-90.28-33.72-90.28-86.94s32.32-86.87,90.28-86.87c14.53,0,34.35,3.34,47.72,7.54v38.43h-8.86l-11.48-19.29c-9.22-1.67-18.67-2.76-27.38-2.76-40.38,0-61.52,21.25-61.52,62.95s21.13,62.94,61.52,62.94c6.75,0,14.02-.87,20.92-2.25v-49.53h26.8v68.24c-13.36,4.13-33.19,7.54-47.72,7.54Z"/>
+      <path class="cls-3" d="M579.07,821.97l-48.52-65.99h-22.59v65.99h-26.29v-146.19l-6.03-20.88h67.69c34.93,0,56.36,18.13,56.36,50.69,0,26.98-15.32,43.44-40.38,47.64l51.86,68.75h-32.1ZM507.97,677.74v55.69h35.3c18.52,0,29.05-9.72,29.05-27.85s-10.53-27.84-29.05-27.84h-35.3Z"/>
+      <path class="cls-5" d="M750.48,825.38c-41.83,0-68.05-25.89-68.05-68.31v-102.17h26.51v102.17c0,29.01,16.2,44.31,41.54,44.31s41.62-15.3,41.62-44.31v-82.67l-20.12-10.29v-9.21h46.55v102.17c0,42.42-26.22,68.31-68.05,68.31Z"/>
+      <path class="cls-3" d="M972.28,755.99h-35.44v65.99h-26.22v-146.19l-6.1-20.88h67.76c34.93,0,56.36,18.13,56.36,50.69s-21.43,50.4-56.36,50.4ZM936.84,677.74v55.69h35.44c18.38,0,29.05-9.72,29.05-27.85s-10.67-27.84-29.05-27.84h-35.44Z"/>
+      <path class="cls-3" d="M1178.12,825.38c-49.39,0-80.33-33.43-80.33-86.94s30.94-86.87,80.33-86.87,80.32,33.43,80.32,86.87-31.01,86.94-80.32,86.94ZM1178.12,675.49c-32.61,0-51.57,21.76-51.57,62.95s18.96,62.94,51.57,62.94,51.56-21.68,51.56-62.94-18.96-62.95-51.56-62.95Z"/>
+      <path class="cls-1" d="M1405.15,821.97h-63.84v-146.19l-6.17-20.88h70.01c32.68,0,53.31,18.13,53.31,45.98,0,15.01-8.42,28.93-22.01,36.69,13.59,7.54,22.81,22.33,22.81,37.93,0,27.26-19.18,46.48-54.11,46.48ZM1405.15,677.16h-37.7v49.53h37.7c16.41,0,26-8.92,26-24.73s-9.59-24.8-26-24.8ZM1405.15,749.02h-37.7v50.69h37.7c16.7,0,26.8-8.92,26.8-25.31s-10.1-25.38-26.8-25.38Z"/>
+      <path class="cls-2" d="M1622.24,825.38c-56.36,0-87.59-34.01-87.59-86.94s31.23-86.87,87.59-86.87c13.36,0,31.52,3.34,44.89,7.54v38.43h-9.23l-11.11-19.51c-8.42-1.45-17.07-2.54-24.55-2.54-38.64,0-58.9,21.46-58.9,62.95s20.26,62.94,58.9,62.94c14.24,0,30.36-3.05,44.89-7.47v23.93c-13.36,4.13-31.52,7.54-44.89,7.54Z"/>
+      <path class="cls-5" d="M714.53,934.73v-61.05h38.2v4.93h-32.54v22.63h32.54v5h-32.54v23.49h32.54v5h-38.2Z"/>
+      <path class="cls-5" d="M831.39,934.73l-34.43-51.05v51.05h-5.74v-61.05h5.74l34.43,50.97v-50.97h5.59v61.05h-5.59Z"/>
+      <path class="cls-5" d="M878.3,934.73v-61.05h38.13v4.93h-32.39v22.63h32.39v5h-32.39v23.49h32.39v5h-38.13Z"/>
+      <path class="cls-3" d="M990.8,934.73l-20.48-27.19h-9.58v27.19h-5.74v-61.05h22.07c11.04,0,18.16,5.87,18.16,16.96s-7.11,16.9-18.16,16.9l20.48,27.19h-6.76ZM960.74,878.75v23.71h16.34c7.7,0,12.28-4.28,12.28-11.82s-4.57-11.89-12.28-11.89h-16.34Z"/>
+      <path class="cls-5" d="M1058.42,935.75c-19.75,0-31.01-12.04-31.01-31.54s11.26-31.62,31.01-31.62c5.38,0,11.7,1.16,17.07,2.76v5.36c-5.37-1.67-11.69-2.83-17.07-2.83-16.26,0-24.98,9.21-24.98,26.32s8.72,26.25,24.98,26.25c3.56,0,7.63-.51,11.48-1.31v-20.88h5.59v24.73c-5.37,1.67-11.69,2.76-17.07,2.76Z"/>
+      <path class="cls-5" d="M1120.16,934.73h-5.95v-61.05h5.95v61.05Z"/>
+      <path class="cls-3" d="M1199.18,934.73l-6.61-16.97h-28.69l-6.61,16.97h-6.61l24.55-61.05h6.02l24.62,61.05h-6.68ZM1178.12,880.78l-12.28,31.76h24.62l-12.35-31.76Z"/>
+    </svg>
+  </div>
+
+  <!-- Reusable Brazil Map Badge Generator Function (Inserted via HTML in each section) -->
+  <div class="fixed-map-template" style="display:none;">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="map-glow-teal" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00ffcc" stop-opacity="0.4"/>
+          <stop offset="100%" stop-color="#00ffcc" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="map-glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <!-- Stylized dashed boundary -->
+      <path d="M 80,25 L 110,27 L 145,35 L 165,55 L 180,75 L 170,95 L 150,105 L 135,115 L 125,135 L 115,165 L 100,180 L 90,175 L 80,155 L 60,145 L 50,140 L 40,115 L 25,95 L 15,80 L 20,60 L 30,55 L 40,55 L 50,45 L 65,35 L 70,30 Z" 
+            fill="rgba(0, 255, 204, 0.03)" 
+            stroke="rgba(0, 255, 204, 0.25)" 
+            stroke-width="1.5" 
+            stroke-dasharray="4 3" />
+      
+      <!-- Connective network lines inside the map -->
+      <line x1="100" y1="75" x2="95" y2="105" stroke="rgba(0, 255, 204, 0.3)" stroke-width="1" />
+      <line x1="95" y1="105" x2="85" y2="140" stroke="rgba(0, 255, 204, 0.3)" stroke-width="1" />
+      
+      <!-- TO Node (Tocantins) -->
+      <circle cx="100" cy="75" r="4" fill="#ffd700" filter="url(#map-glow-filter)" />
+      <circle cx="100" cy="75" r="2" fill="#fff" />
+      <text x="108" y="79" fill="#a0c4c5" font-size="9" font-family="'Outfit', sans-serif" font-weight="600">TO</text>
+      
+      <!-- GO Node (Goiás - Sede Principal) -->
+      <circle cx="95" cy="105" r="6" fill="#00ffcc" filter="url(#map-glow-filter)" class="pulse-dot" style="animation: map-pulse 2s infinite ease-in-out;" />
+      <circle cx="95" cy="105" r="3" fill="#fff" />
+      <text x="105" y="109" fill="#fff" font-size="10" font-family="'Outfit', sans-serif" font-weight="900">GO</text>
+      
+      <!-- PR Node (Paraná) -->
+      <circle cx="85" cy="140" r="4" fill="#ffd700" filter="url(#map-glow-filter)" />
+      <circle cx="85" cy="140" r="2" fill="#fff" />
+      <text x="93" y="144" fill="#a0c4c5" font-size="9" font-family="'Outfit', sans-serif" font-weight="600">PR</text>
+    </svg>
+  </div>
+
+
+  <!-- ==========================================
+       SEÇÃO 1: CARROSSEL "COMO FUNCIONA"
+       ========================================== -->
+  <section id="como-funciona" class="carousel-section">
+    <!-- Canto superior direito: Mapa estilizado -->
+    <div class="brazil-map-badge map-container-target"></div>
+    
+    <div class="container">
+      <div class="carousel-container">
+        
+        <div class="carousel-wrapper">
+          <!-- Slide 1: Geração -->
+          <div class="carousel-slide active" id="slide-geracao">
+            <div class="slide-content">
+              <span class="section-pretitle">Como funciona o Consórcio BC Energia</span>
+              <h2 class="slide-title-sec">Geração de Energia</h2>
+              <p class="slide-body">
+                Nossas usinas solares parceiras captam a radiação solar e geram energia limpa e 100% renovável. Esta eletricidade ecológica de alta performance é injetada diretamente na rede de distribuição local.
+              </p>
+              <a href="#simulador" class="btn">
+                Energia limpa que transforma o futuro.
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+            
+            <div class="slide-visual">
+              <!-- SVG Isometric Scene 1: Solar Plants -->
+              <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grass-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00ffa3" />
+                    <stop offset="100%" stop-color="#007d4b" />
+                  </linearGradient>
+                  <linearGradient id="solar-cell-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#38ef7d" />
+                    <stop offset="100%" stop-color="#11998e" />
+                  </linearGradient>
+                  <linearGradient id="solar-panel-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00d2ff" />
+                    <stop offset="100%" stop-color="#0066ff" />
+                  </linearGradient>
+                  <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+                <!-- Platform Shadow -->
+                <ellipse cx="250" cy="310" rx="170" ry="38" fill="rgba(0, 255, 204, 0.12)" filter="url(#glow-light)"/>
+                
+                <!-- Isometric Platform -->
+                <g class="isometric-group">
+                  <!-- Side Wall Left -->
+                  <path d="M 80,220 L 250,300 L 250,325 L 80,245 Z" fill="#2d1c12" />
+                  <!-- Side Wall Right -->
+                  <path d="M 250,300 L 420,220 L 420,245 L 250,325 Z" fill="#1f130b" />
+                  <!-- Top Grass -->
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="url(#grass-grad-1)" />
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="rgba(0,255,204,0.15)" />
+                  
+                  <!-- GRID OF SOLAR PANELS -->
+                  <!-- Panel 1 (Left Back) -->
+                  <g transform="translate(130, 165)">
+                    <!-- Support -->
+                    <line x1="20" y1="20" x2="20" y2="0" stroke="#a0c4c5" stroke-width="3" />
+                    <line x1="40" y1="30" x2="40" y2="10" stroke="#a0c4c5" stroke-width="3" />
+                    <!-- Face (Rhombus tilted) -->
+                    <path d="M 10,-10 L 50,10 L 40,25 L 0,5 Z" fill="url(#solar-panel-grad)" stroke="#fff" stroke-width="1.5" />
+                    <!-- Grid Lines -->
+                    <line x1="25" y1="0" x2="20" y2="15" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                    <line x1="35" y1="5" x2="30" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                  </g>
+
+                  <!-- Panel 2 (Center Back) -->
+                  <g transform="translate(230, 165)">
+                    <line x1="20" y1="20" x2="20" y2="0" stroke="#a0c4c5" stroke-width="3" />
+                    <line x1="40" y1="30" x2="40" y2="10" stroke="#a0c4c5" stroke-width="3" />
+                    <path d="M 10,-10 L 50,10 L 40,25 L 0,5 Z" fill="url(#solar-panel-grad)" stroke="#fff" stroke-width="1.5" />
+                    <line x1="25" y1="0" x2="20" y2="15" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                    <line x1="35" y1="5" x2="30" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                  </g>
+
+                  <!-- Panel 3 (Front Center) -->
+                  <g transform="translate(180, 205)">
+                    <line x1="20" y1="20" x2="20" y2="0" stroke="#a0c4c5" stroke-width="3" />
+                    <line x1="40" y1="30" x2="40" y2="10" stroke="#a0c4c5" stroke-width="3" />
+                    <path d="M 10,-10 L 50,10 L 40,25 L 0,5 Z" fill="url(#solar-panel-grad)" stroke="#fff" stroke-width="1.5" />
+                    <line x1="25" y1="0" x2="20" y2="15" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                    <line x1="35" y1="5" x2="30" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+                  </g>
+                  
+                  <!-- Connection Box (Inverter) on Grass -->
+                  <path d="M 280,240 L 305,252 L 290,260 L 265,248 Z" fill="#333" />
+                  <path d="M 265,248 L 290,260 L 290,270 L 265,258 Z" fill="#222" />
+                  <path d="M 290,260 L 305,252 L 305,262 L 290,270 Z" fill="#111" />
+                  <!-- Glowing indicator on inverter -->
+                  <circle cx="280" cy="257" r="2.5" fill="#00ffcc" class="pulse-glow" filter="url(#glow-light)" />
+                  
+                  <!-- Glowing Wire cables running on grass -->
+                  <path d="M 170,195 Q 220,230 270,251" fill="none" stroke="#00ffcc" stroke-width="2" stroke-dasharray="5 3" class="connection-line active" />
+                  <path d="M 270,195 Q 285,220 285,248" fill="none" stroke="#00ffcc" stroke-width="2" stroke-dasharray="5 3" class="connection-line active" />
+                  
+                  <!-- Cable leaving the platform -->
+                  <path d="M 290,268 Q 320,285 360,280" fill="none" stroke="#00ffcc" stroke-width="3" stroke-linecap="round" />
+                </g>
+
+                <!-- Floating Elements (Sun & Clouds) -->
+                <!-- Sun -->
+                <g class="sun-glow" transform="translate(-10, -10)">
+                  <circle cx="340" cy="80" r="24" fill="#ffd700" filter="url(#glow-light)"/>
+                  <circle cx="340" cy="80" r="18" fill="#fff" />
+                  <!-- Rays -->
+                  <path d="M 340,48 L 340,38 M 340,112 L 340,122 M 308,80 L 298,80 M 372,80 L 382,80" stroke="#ffd700" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+                </g>
+                <!-- Clouds -->
+                <g class="isometric-group" style="animation-delay: -2s;">
+                  <path d="M 120,70 Q 135,50 155,60 Q 175,50 185,70 Q 200,80 185,95 L 120,95 Z" fill="rgba(255,255,255,0.7)" filter="blur(2px)"/>
+                  <path d="M 240,100 Q 250,85 265,92 Q 280,85 290,100 Q 300,110 290,120 L 240,120 Z" fill="rgba(255,255,255,0.5)" filter="blur(3px)"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Slide 2: Injeção -->
+          <div class="carousel-slide" id="slide-injecao">
+            <div class="slide-content">
+              <span class="section-pretitle">Como funciona o Consórcio BC Energia</span>
+              <h2 class="slide-title-sec">Injeção na Rede</h2>
+              <p class="slide-body">
+                A energia gerada é direcionada para a rede de distribuição pública da concessionária. A distribuidora converte essa eletricidade verde em créditos de energia equivalentes, homologados em seu CPF ou CNPJ.
+              </p>
+              <a href="#simulador" class="btn">
+                Energia que gera valor para você.
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+            
+            <div class="slide-visual">
+              <!-- SVG Isometric Scene 2: Grid and Distribution -->
+              <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grass-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#00e5ff" />
+                    <stop offset="100%" stop-color="#00607a" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="250" cy="310" rx="170" ry="38" fill="rgba(0, 255, 204, 0.12)" filter="url(#glow-light)"/>
+                
+                <g class="isometric-group">
+                  <!-- Base Platform -->
+                  <path d="M 80,220 L 250,300 L 250,325 L 80,245 Z" fill="#2d1c12" />
+                  <path d="M 250,300 L 420,220 L 420,245 L 250,325 Z" fill="#1f130b" />
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="url(#grass-grad-1)" />
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="rgba(0,255,204,0.1)" />
+
+                  <!-- TRANSMISSION TOWER (Isometric Vector representation) -->
+                  <g transform="translate(180, 70)">
+                    <!-- Base Support Legs -->
+                    <line x1="40" y1="130" x2="50" y2="20" stroke="#ffffff" stroke-width="2" opacity="0.9" />
+                    <line x1="60" y1="130" x2="50" y2="20" stroke="#ffffff" stroke-width="2" opacity="0.9" />
+                    <line x1="50" y1="20" x2="50" y2="0" stroke="#ffffff" stroke-width="2.5" />
+                    
+                    <!-- Crossbeams -->
+                    <line x1="45" y1="70" x2="55" y2="70" stroke="#ffffff" stroke-width="1.5" />
+                    <line x1="42" y1="100" x2="58" y2="100" stroke="#ffffff" stroke-width="1.5" />
+                    
+                    <!-- Diagonal bracing -->
+                    <line x1="40" y1="130" x2="58" y2="100" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+                    <line x1="60" y1="130" x2="42" y2="100" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+                    <line x1="42" y1="100" x2="50" y2="70" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+                    <line x1="58" y1="100" x2="50" y2="70" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+                    
+                    <!-- Cross arms (Tilted for isometric perspective) -->
+                    <!-- Top Arm -->
+                    <line x1="30" y1="40" x2="70" y2="40" stroke="#ffffff" stroke-width="3" />
+                    <circle cx="30" cy="40" r="3" fill="#ffd700" />
+                    <circle cx="70" cy="40" r="3" fill="#ffd700" />
+                    <!-- Bottom Arm -->
+                    <line x1="20" y1="75" x2="80" y2="75" stroke="#ffffff" stroke-width="3" />
+                    <circle cx="20" cy="75" r="3" fill="#ffd700" />
+                    <circle cx="80" cy="75" r="3" fill="#ffd700" />
+                  </g>
+
+                  <!-- Small Inverter / Generator Node -->
+                  <g transform="translate(100, 200)">
+                    <path d="M 0,0 L 20,10 L 10,15 L -10,5 Z" fill="#a0c4c5" />
+                    <path d="M -10,5 L 10,15 L 10,23 L -10,13 Z" fill="#6d8f90" />
+                    <path d="M 10,15 L 20,10 L 20,18 L 10,23 Z" fill="#526d6e" />
+                  </g>
+                  
+                  <!-- Local Market / Consumer Houses (Right Side) -->
+                  <g transform="translate(300, 160)">
+                    <!-- House 1 -->
+                    <path d="M 20,30 L 45,42 L 35,47 L 10,35 Z" fill="#ffffff" /> <!-- Wall L -->
+                    <path d="M 45,42 L 60,35 L 50,30 L 35,37 Z" fill="#dddddd" /> <!-- Wall R -->
+                    <path d="M 20,30 L 35,20 L 45,42 L 35,37 Z" fill="#ffd700" opacity="0.9" /> <!-- Roof L -->
+                    <path d="M 35,20 L 50,30 L 45,42 Z" fill="#ccac00" /> <!-- Roof R -->
+                    <!-- Glowing window -->
+                    <polygon points="20,38 27,41 27,45 20,42" fill="#00ffcc" class="pulse-glow" filter="url(#glow-light)" />
+                  </g>
+                  
+                  <!-- Energy lines connecting to tower and leaving to consumer -->
+                  <path d="M 110,210 Q 160,205 210,170" fill="none" stroke="#00ffcc" stroke-width="2.5" stroke-dasharray="6 4" class="connection-line active" />
+                  <path d="M 250,115 Q 300,130 345,185" fill="none" stroke="#00ffcc" stroke-width="2.5" stroke-dasharray="6 4" class="connection-line active" />
+                  
+                  <!-- Signal Flows -->
+                  <circle cx="210" cy="170" r="4" fill="#00ffcc" class="pulse-glow" filter="url(#glow-light)"/>
+                  <circle cx="345" cy="185" r="4" fill="#ffd700" class="pulse-glow" filter="url(#glow-light)"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Slide 3: Economia -->
+          <div class="carousel-slide" id="slide-economia">
+            <div class="slide-content">
+              <span class="section-pretitle">Como funciona o Consórcio BC Energia</span>
+              <h2 class="slide-title-sec">Economia na Conta</h2>
+              <p class="slide-body">
+                Os créditos gerados entram como desconto automático direto no seu boleto mensal. Você economiza de forma consistente e garantida <strong style="color: var(--accent-yellow);">até 25% todo mês</strong>, sem taxas ocultas ou surpresas.
+              </p>
+              <a href="#simulador" class="btn">
+                Quero minha análise gratuita.
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+            
+            <div class="slide-visual">
+              <!-- SVG Isometric Scene 3: Bill & Money -->
+              <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="250" cy="310" rx="170" ry="38" fill="rgba(0, 255, 204, 0.12)" filter="url(#glow-light)"/>
+                
+                <g class="isometric-group">
+                  <!-- Base Platform -->
+                  <path d="M 80,220 L 250,300 L 250,325 L 80,245 Z" fill="#2d1c12" />
+                  <path d="M 250,300 L 420,220 L 420,245 L 250,325 Z" fill="#1f130b" />
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="url(#grass-grad-1)" />
+                  <path d="M 250,140 L 420,220 L 250,300 L 80,220 Z" fill="rgba(0,255,204,0.1)" />
+
+                  <!-- THE ELECTRICITY BILL (Tilted 3D Sheet) -->
+                  <g transform="translate(140, 130)">
+                    <!-- Bill Paper Background -->
+                    <path d="M 40,0 L 130,45 L 90,110 L 0,65 Z" fill="#ffffff" stroke="var(--accent-teal)" stroke-width="2" />
+                    <!-- Decorative Lines (Representing Text/Data) -->
+                    <line x1="55" y1="15" x2="115" y2="45" stroke="#a0c4c5" stroke-width="3" />
+                    <line x1="50" y1="28" x2="90" y2="48" stroke="#a0c4c5" stroke-width="2" />
+                    <line x1="45" y1="38" x2="105" y2="68" stroke="#a0c4c5" stroke-width="2.5" />
+                    <!-- Green Checkmark / Paid Stamp -->
+                    <circle cx="45" cy="70" r="12" fill="rgba(0,255,204,0.15)" />
+                    <path d="M 39,70 L 43,74 L 51,66" fill="none" stroke="var(--accent-teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </g>
+
+                  <!-- STACK OF COINS (Right Side) -->
+                  <g transform="translate(290, 200)">
+                    <!-- Coin 1 (Bottom) -->
+                    <path d="M 0,40 C 15,40 30,35 30,28 L 30,34 C 30,41 15,46 0,46 C -15,46 -30,41 -30,34 L -30,28 C -30,35 -15,40 0,40 Z" fill="#ccac00" />
+                    <ellipse cx="0" cy="28" rx="30" ry="12" fill="#ffd700" stroke="#ffffff" stroke-width="0.5" />
+                    <!-- Coin 2 -->
+                    <path d="M 0,28 C 15,28 30,23 30,16 L 30,22 C 30,29 15,34 0,34 C -15,34 -30,29 -30,22 L -30,16 C -30,23 -15,28 0,28 Z" fill="#ccac00" />
+                    <ellipse cx="0" cy="16" rx="30" ry="12" fill="#ffd700" stroke="#ffffff" stroke-width="0.5" />
+                    <!-- Coin 3 (Top) -->
+                    <path d="M 0,16 C 15,16 30,11 30,4 L 30,10 C 30,17 15,22 0,22 C -15,22 -30,17 -30,10 L -30,4 C -30,11 -15,16 0,16 Z" fill="#ccac00" />
+                    <ellipse cx="0" cy="4" rx="30" ry="12" fill="#ffd700" stroke="#ffffff" stroke-width="0.5" />
+                    <!-- Coin symbol text -->
+                    <text x="-5" y="8" fill="#5c4033" font-size="12" font-weight="900">$</text>
+                  </g>
+
+                  <!-- 3D NEON BADGE: "ATÉ 25% DE DESCONTO" -->
+                  <g transform="translate(190, 80)" class="isometric-group" style="animation-delay: -1s;">
+                    <!-- Badge Background -->
+                    <path d="M 0,15 L 140,15 L 120,45 L -20,45 Z" fill="#032021" stroke="var(--accent-teal)" stroke-width="2" filter="url(#glow-light)" />
+                    <!-- Badge Text -->
+                    <text x="12" y="36" fill="var(--accent-teal)" font-size="13" font-weight="900" font-family="'Outfit', sans-serif" letter-spacing="1">ATÉ 25% DESCONTO</text>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carrossel Navegação -->
+        <button class="carousel-arrow carousel-arrow-left" onclick="moveSlide(-1)" aria-label="Slide anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button class="carousel-arrow carousel-arrow-right" onclick="moveSlide(1)" aria-label="Próximo slide">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+      </div>
+      
+      <!-- Dots -->
+      <div class="carousel-dots">
+        <div class="carousel-dot active" onclick="setSlide(0)"></div>
+        <div class="carousel-dot" onclick="setSlide(1)"></div>
+        <div class="carousel-dot" onclick="setSlide(2)"></div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#qualificacao" class="scroll-indicator">
+      <span>Ver quem pode aderir</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+  </section>
+
+
+  <!-- ==========================================
+       SEÇÃO 2: QUALIFICAÇÃO "PARA QUEM É"
+       ========================================== -->
+  <section id="qualificacao">
+    <div class="brazil-map-badge map-container-target"></div>
+
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 4rem; display: flex; flex-direction: column; align-items: center;">
+        <span class="section-pretitle">Qualificação</span>
+        <h2 class="section-title">Para quem é o Consórcio BC Energia</h2>
+        <p class="section-desc">Descubra as modalidades qualificadas para o consórcio de energia no estado de Goiás. Economia descomplicada para qualquer perfil.</p>
+      </div>
+
+      <div class="grid-qualificacao">
+        
+        <!-- CARD A: CASA -->
+        <div class="card-qualif">
+          <span class="card-qualif-tag">Goiás Disponível</span>
+          <div class="card-qualif-visual">
+            <!-- SVG House isometric -->
+            <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="120" cy="140" rx="80" ry="18" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+              <g class="isometric-group">
+                <!-- Grass -->
+                <path d="M 120,70 L 200,110 L 120,150 L 40,110 Z" fill="url(#grass-grad-1)" />
+                <!-- House Body -->
+                <!-- Front Wall Left -->
+                <path d="M 80,100 L 120,120 L 120,140 L 80,120 Z" fill="#eeeeee" />
+                <!-- Front Wall Right -->
+                <path d="M 120,120 L 160,100 L 160,120 L 120,140 Z" fill="#dddddd" />
+                <!-- Roof Left -->
+                <path d="M 80,100 L 120,80 L 120,120 L 80,120 Z" fill="var(--bg-dark-3)" />
+                <!-- Roof Right -->
+                <path d="M 120,80 L 160,100 L 160,120 L 120,120 Z" fill="#0d6e70" />
+                
+                <!-- Highlighted Electric Meter -->
+                <g transform="translate(135, 115)">
+                  <!-- Line pointing to meter -->
+                  <path d="M 0,0 L 25,-25" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <!-- Meter Box -->
+                  <path d="M 25,-25 L 40,-17 L 40,-7 L 25,-15 Z" fill="#111" stroke="var(--accent-teal)" stroke-width="1" />
+                  <circle cx="33" cy="-14" r="3" fill="var(--accent-teal)" class="pulse-glow" filter="url(#glow-light)" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card-qualif-title">Para quem tem Casa</h3>
+          <p class="card-qualif-body">
+            Ideal para proprietários de residências que querem reduzir custos sem instalar painéis solares no telhado. Sem furos, sem reformas e com desconto imediato.
+          </p>
+          <a href="#simulador" class="btn">Simular para minha Casa</a>
+        </div>
+
+        <!-- CARD B: APARTAMENTO -->
+        <div class="card-qualif">
+          <span class="card-qualif-tag">Goiás Disponível</span>
+          <div class="card-qualif-visual">
+            <!-- SVG Apartment isometric -->
+            <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="120" cy="140" rx="80" ry="18" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+              <g class="isometric-group">
+                <!-- Grass -->
+                <path d="M 120,70 L 200,110 L 120,150 L 40,110 Z" fill="url(#grass-grad-1)" />
+                <!-- Tall Skyscraper Building -->
+                <!-- Wall L -->
+                <path d="M 100,50 L 120,60 L 120,135 L 100,125 Z" fill="#ffffff" />
+                <!-- Wall R -->
+                <path d="M 120,60 L 140,50 L 140,125 L 120,135 Z" fill="#cccccc" />
+                <!-- Roof -->
+                <path d="M 100,50 L 120,40 L 140,50 L 120,60 Z" fill="#38ef7d" />
+                
+                <!-- Windows -->
+                <circle cx="107" cy="70" r="1.5" fill="#032021" />
+                <circle cx="113" cy="73" r="1.5" fill="#032021" />
+                <circle cx="107" cy="85" r="1.5" fill="#00ffcc" class="pulse-glow" filter="url(#glow-light)" />
+                <circle cx="113" cy="88" r="1.5" fill="#032021" />
+                <circle cx="107" cy="100" r="1.5" fill="#032021" />
+                <circle cx="113" cy="103" r="1.5" fill="#00ffcc" class="pulse-glow" filter="url(#glow-light)" />
+                
+                <!-- Highlighted Meters box at building base -->
+                <g transform="translate(130, 95)">
+                  <!-- Pointer -->
+                  <path d="M 0,15 L 25,0" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <!-- Box -->
+                  <path d="M 25,0 L 40,8 L 40,18 L 25,10 Z" fill="#111" stroke="var(--accent-teal)" stroke-width="1" />
+                  <rect x="29" y="5" width="8" height="8" fill="var(--accent-teal)" class="pulse-glow" opacity="0.8" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card-qualif-title">Para Apartamento</h3>
+          <p class="card-qualif-body">
+            Quem mora em condomínio ou prédio também pode economizar. O desconto é vinculado diretamente à sua conta individual de energia, sem envolver a administração.
+          </p>
+          <a href="#simulador" class="btn">Desconto no Apartamento</a>
+        </div>
+
+        <!-- CARD C: IMÓVEL ALUGADO -->
+        <div class="card-qualif">
+          <span class="card-qualif-tag">Goiás Disponível</span>
+          <div class="card-qualif-visual">
+            <!-- SVG Rented Property isometric -->
+            <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="120" cy="140" rx="80" ry="18" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+              <g class="isometric-group">
+                <!-- Grass -->
+                <path d="M 120,70 L 200,110 L 120,150 L 40,110 Z" fill="url(#grass-grad-1)" />
+                
+                <!-- Rental House -->
+                <path d="M 90,105 L 120,120 L 120,135 L 90,120 Z" fill="#eeeeee" />
+                <path d="M 120,120 L 150,105 L 150,120 L 120,135 Z" fill="#cccccc" />
+                <path d="M 90,105 L 120,90 L 120,120 L 90,120 Z" fill="var(--bg-dark-3)" />
+                <path d="M 120,90 L 150,105 L 150,120 L 120,120 Z" fill="#0d6e70" />
+
+                <!-- Floating Golden Key (Representing Renting/Keys Handover) -->
+                <g transform="translate(105, 55)" class="isometric-group" style="animation-delay: -1.5s;">
+                  <!-- Key shape -->
+                  <path d="M 0,10 L 25,10 L 25,18 L 20,18 L 20,13 L 15,13 L 15,18 L 10,18 L 10,13 L 0,13 Z" fill="var(--accent-yellow)" stroke="#fff" stroke-width="0.5" filter="url(#glow-light)" />
+                  <circle cx="0" cy="11.5" r="5" fill="var(--accent-yellow)" stroke="#fff" stroke-width="0.5" />
+                  <circle cx="0" cy="11.5" r="2.5" fill="var(--bg-dark-2)" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <h3 class="card-qualif-title">Imóvel Alugado</h3>
+          <p class="card-qualif-body">
+            Não é preciso ter imóvel próprio. Se você mora de aluguel ou possui comércio alugado em Goiás, pode aderir e levar o benefício se decidir mudar de local.
+          </p>
+          <a href="#simulador" class="btn">Economizar no Alugado</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#institucional" class="scroll-indicator">
+      <span>Conhecer o Grupo BC</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+  </section>
+
+
+  <!-- ==========================================
+       SEÇÃO 3: INSTITUCIONAL "GRUPO BC ENERGIA"
+       ========================================== -->
+  <section id="institucional">
+    <div class="brazil-map-badge map-container-target"></div>
+
+    <div class="container">
+      <div class="inst-section">
+        
+        <!-- SUBSEÇÃO 1: ESCALA (A Comercializadora) -->
+        <div class="inst-row">
+          <div class="inst-content">
+            <span class="section-pretitle">O Grupo BC Energia</span>
+            <h2 class="section-title">Maior Comercializadora de Energia do Centro-Oeste</h2>
+            <p class="section-desc">
+              Com sólido histórico e liderança de mercado, o Grupo BC Energia conecta produtores e consumidores para entregar inovação e eficiência financeira. Nossa robustez operacional assegura a consistência e segurança do seu desconto mensal.
+            </p>
+            <a href="#simulador" class="btn">Conhecer nossa história</a>
+          </div>
+          
+          <div class="inst-visual">
+            <!-- Operations Center Isometric Scene -->
+            <svg viewBox="0 0 450 350" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="225" cy="270" rx="140" ry="30" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+              <g class="isometric-group">
+                <!-- Grass platform -->
+                <path d="M 225,120 L 365,200 L 225,280 L 85,200 Z" fill="url(#grass-grad-1)" />
+                <!-- Central Operations dome -->
+                <path d="M 180,185 L 225,210 L 270,185 C 270,150 180,150 180,185 Z" fill="rgba(0, 255, 204, 0.2)" stroke="var(--accent-teal)" stroke-width="2" />
+                <path d="M 195,193 L 225,210 L 255,193 L 255,202 L 225,218 L 195,202 Z" fill="#ffffff" opacity="0.8" />
+              </g>
+            </svg>
+            
+            <!-- Floating Totems Overlay -->
+            <div class="totem-overlay">
+              <div class="totem-card totem-1">
+                <span class="totem-value">+5.000</span>
+                <span class="totem-label">Clientes atendidos</span>
+              </div>
+              <div class="totem-card totem-2">
+                <span class="totem-value">R$ 400M+</span>
+                <span class="totem-label">Economizados</span>
+              </div>
+              <div class="totem-card totem-3">
+                <span class="totem-value">+15k Ton</span>
+                <span class="totem-label">CO₂ Evitadas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBSEÇÃO 2: PILARES CONECTADOS -->
+        <div class="inst-row reverse">
+          <div class="inst-content">
+            <span class="section-pretitle">Valores e Propósito</span>
+            <h2 class="section-title">Nossos Pilares e Serviços</h2>
+            <p class="section-desc">
+              Atuamos baseados em diretrizes rígidas de integridade, pioneirismo mercadológico e dedicação ao cliente. Integramos tecnologia de ponta e sustentabilidade para entregar economia pura e inteligência energética.
+            </p>
+            <a href="#simulador" class="btn btn-secondary">Fale com um Especialista</a>
+          </div>
+          
+          <div class="inst-visual">
+            <!-- Connected values nodes isometric -->
+            <svg viewBox="0 0 450 350" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="225" cy="270" rx="140" ry="30" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+              <g class="isometric-group">
+                <!-- Grass -->
+                <path d="M 225,120 L 365,200 L 225,280 L 85,200 Z" fill="url(#grass-grad-1)" />
+                
+                <!-- Connective network curves -->
+                <path d="M 150,170 Q 225,230 300,170" fill="none" stroke="var(--accent-teal)" stroke-dasharray="4 4" stroke-width="2" class="connection-line active" />
+                <path d="M 225,140 Q 225,200 225,250" fill="none" stroke="var(--accent-teal)" stroke-dasharray="4 4" stroke-width="2" class="connection-line active" />
+                <path d="M 150,170 Q 225,180 300,170" fill="none" stroke="var(--accent-teal)" stroke-dasharray="4 4" stroke-width="2" class="connection-line active" />
+                
+                <!-- Nodes Pedestals & Icons -->
+                <!-- Node 1: Sustentabilidade (Left) -->
+                <g transform="translate(150, 160)">
+                  <ellipse cx="0" cy="10" rx="20" ry="10" fill="var(--bg-dark-3)" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <circle cx="0" cy="-5" r="12" fill="var(--accent-teal)" filter="url(#glow-light)" />
+                  <!-- Leaf shape simplified -->
+                  <path d="M -3,-10 Q 5,-10 3,-2 Q -5,-2 -3,-10 Z" fill="var(--bg-dark-1)" />
+                </g>
+                <text x="100" y="195" fill="#fff" font-size="11" font-weight="700">Sustentabilidade</text>
+
+                <!-- Node 2: Pioneirismo (Top) -->
+                <g transform="translate(225, 130)">
+                  <ellipse cx="0" cy="10" rx="20" ry="10" fill="var(--bg-dark-3)" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <circle cx="0" cy="-5" r="12" fill="var(--accent-teal)" filter="url(#glow-light)" />
+                  <!-- Rocket shape simplified -->
+                  <path d="M 0,-12 L 4,-5 L 2,0 L -2,0 L -4,-5 Z" fill="var(--bg-dark-1)" />
+                </g>
+                <text x="195" y="160" fill="#fff" font-size="11" font-weight="700">Pioneirismo</text>
+
+                <!-- Node 3: Respeito (Right) -->
+                <g transform="translate(300, 160)">
+                  <ellipse cx="0" cy="10" rx="20" ry="10" fill="var(--bg-dark-3)" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <circle cx="0" cy="-5" r="12" fill="var(--accent-teal)" filter="url(#glow-light)" />
+                  <!-- Heart shape simplified -->
+                  <path d="M 0,-8 C -3,-12 -8,-8 -4,-4 L 0,0 L 4,-4 C 8,-8 3,-12 0,-8 Z" fill="var(--bg-dark-1)" />
+                </g>
+                <text x="275" y="195" fill="#fff" font-size="11" font-weight="700">Respeito</text>
+
+                <!-- Node 4: Confiança (Bottom) -->
+                <g transform="translate(225, 230)">
+                  <ellipse cx="0" cy="10" rx="20" ry="10" fill="var(--bg-dark-3)" stroke="var(--accent-teal)" stroke-width="1.5" />
+                  <circle cx="0" cy="-5" r="12" fill="var(--accent-yellow)" filter="url(#glow-light)" />
+                  <!-- Checkmark -->
+                  <path d="M -4,-5 L -1,-2 L 4,-8" fill="none" stroke="var(--bg-dark-1)" stroke-width="2.5" stroke-linecap="round" />
+                </g>
+                <text x="200" y="260" fill="var(--accent-yellow)" font-size="11" font-weight="700">Confiança</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#simulador" class="scroll-indicator">
+      <span>Fazer uma simulação</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+  </section>
+
+
+  <!-- ==========================================
+       SEÇÃO 4: INTERATIVO "SIMULE SUA ECONOMIA"
+       ========================================== -->
+  <section id="simulador">
+    <div class="brazil-map-badge map-container-target"></div>
+
+    <div class="container">
+      <div class="sim-layout">
+        
+        <!-- Painel Esquerdo -->
+        <div class="sim-panel">
+          <h2 style="font-size: 2rem; margin-bottom: 0.25rem;">Simule sua economia</h2>
+          <p class="sim-subtitle">Simule seu desconto instantâneo de acordo com o consumo do seu estado.</p>
+          
+          <!-- Área Interativa 1: Seletor de Estado -->
+          <div class="sim-group">
+            <span class="sim-label">Selecione seu Estado</span>
+            <div class="state-selector">
+              <button class="state-btn active" onclick="selectState('GO', 0.25)" id="btn-state-go">Goiás</button>
+              <button class="state-btn" onclick="selectState('PR', 0.22)" id="btn-state-pr">Paraná</button>
+              <button class="state-btn" onclick="selectState('TO', 0.23)" id="btn-state-to">Tocantins</button>
+            </div>
+          </div>
+
+          <!-- Área Interativa 2: Entrada do Valor da Conta -->
+          <div class="sim-group">
+            <span class="sim-label">Valor médio da sua conta de luz</span>
+            <div class="bill-value-container">
+              <div class="bill-input-row">
+                <span class="currency-symbol">R$</span>
+                <input type="number" id="bill-number-input" class="bill-input" value="800" min="100" max="50000" step="50" oninput="handleNumericInput(this.value)">
+              </div>
+              <input type="range" id="bill-range-slider" class="bill-slider" min="100" max="10000" step="50" value="800" oninput="handleSliderInput(this.value)">
+            </div>
+          </div>
+
+          <!-- Área de Resultado -->
+          <div class="sim-result">
+            <div class="result-label">Sua economia estimada de <span id="lbl-discount-pct" style="color:var(--accent-teal); font-weight:700;">25%</span>:</div>
+            <div class="result-value" id="lbl-saving-monthly">R$ 200,00 <span style="font-size: 1.2rem; font-weight:500; color:var(--text-muted);">/ mês</span></div>
+            <div class="result-annual" id="lbl-saving-annual">Economia anual de R$ 2.400,00</div>
+          </div>
+
+          <!-- CTA Button -->
+          <button class="btn" style="width: 100%; margin-bottom: 1.5rem;" onclick="submitSimulation()">
+            Quero minha análise gratuita
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+
+          <p class="sim-footer">
+            * Valores simulados de desconto estimados com base nas tarifas médias residenciais/comerciais B1 vigentes. Sujeito a análise técnica da distribuidora.
+          </p>
+        </div>
+
+        <!-- Painel Direito (Visualização Geográfica) -->
+        <div class="sim-visual">
+          <!-- Main 3D platform rendering the highlighted state columns -->
+          <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="250" cy="320" rx="190" ry="40" fill="rgba(0, 255, 204, 0.1)" filter="url(#glow-light)"/>
+            
+            <g class="isometric-group">
+              <!-- Base Platform -->
+              <path d="M 50,220 L 250,320 L 250,345 L 50,245 Z" fill="#2d1c12" />
+              <path d="M 250,320 L 450,220 L 450,245 L 250,345 Z" fill="#1f130b" />
+              <path d="M 250,120 L 450,220 L 250,320 L 50,220 Z" fill="url(#grass-grad-1)" />
+              <path d="M 250,120 L 450,220 L 250,320 L 50,220 Z" fill="rgba(0,255,204,0.05)" />
+
+              <!-- Fluid Connection Lines from left edge of platform -->
+              <path d="M 50,220 Q 150,230 220,180" fill="none" stroke="rgba(0,255,204,0.15)" stroke-width="2" class="connection-line active" id="line-go" />
+              <path d="M 50,220 Q 180,180 270,140" fill="none" stroke="rgba(0,255,204,0.15)" stroke-width="2" class="connection-line" id="line-to" />
+              <path d="M 50,220 Q 120,270 170,240" fill="none" stroke="rgba(0,255,204,0.15)" stroke-width="2" class="connection-line" id="line-pr" />
+
+              <!-- STATE PILLARS (Columns representing the states) -->
+              
+              <!-- TOCANTINS (TO) - Center Back -->
+              <g transform="translate(270, 140)" class="map-state-pill" id="pillar-to">
+                <!-- Bottom base -->
+                <ellipse cx="0" cy="20" rx="18" ry="8" fill="#1f130b" />
+                <!-- Column vertical -->
+                <path d="M -18,20 L 18,20 L 18,-15 L -18,-15 Z" fill="rgba(6,35,37,0.8)" stroke="#ffd700" stroke-width="1.5" />
+                <ellipse cx="0" cy="-15" rx="18" ry="8" fill="rgba(255, 215, 0, 0.4)" stroke="#ffd700" />
+              </g>
+
+              <!-- GOIÁS (GO) - Center Active -->
+              <g transform="translate(220, 180)" class="map-state-pill active" id="pillar-go">
+                <ellipse cx="0" cy="20" rx="22" ry="10" fill="#1f130b" />
+                <!-- Pillar body -->
+                <path d="M -22,20 L 22,20 L 22,-25 L -22,-25 Z" fill="rgba(0, 255, 204, 0.15)" stroke="var(--accent-teal)" stroke-width="2.5" />
+                <ellipse cx="0" cy="-25" rx="22" ry="10" fill="rgba(0, 255, 204, 0.6)" stroke="var(--accent-teal)" />
+                <circle cx="0" cy="-25" r="4" fill="#ffffff" class="pulse-glow" filter="url(#glow-light)" />
+              </g>
+
+              <!-- PARANÁ (PR) - Front Left -->
+              <g transform="translate(170, 240)" class="map-state-pill" id="pillar-pr">
+                <ellipse cx="0" cy="20" rx="18" ry="8" fill="#1f130b" />
+                <path d="M -18,20 L 18,20 L 18,-10 L -18,-10 Z" fill="rgba(6,35,37,0.8)" stroke="#ffd700" stroke-width="1.5" />
+                <ellipse cx="0" cy="-10" rx="18" ry="8" fill="rgba(255, 215, 0, 0.4)" stroke="#ffd700" />
+              </g>
+
+            </g>
+          </svg>
+
+          <!-- Floating Data Totems on Map -->
+          <div class="sim-map-totem sim-totem-go active" id="totem-map-go">GOIÁS: até 25%</div>
+          <div class="sim-map-totem sim-totem-to" id="totem-map-to">TOCANTINS: até 23%</div>
+          <div class="sim-map-totem sim-totem-pr" id="totem-map-pr">PARANÁ: até 22%</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Success Modal Popup (Para CTA) -->
+  <div id="success-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(3,20,21,0.9); z-index:9999; align-items:center; justify-content:center; padding:1.5rem;">
+    <div style="background:var(--bg-dark-2); border:2px solid var(--accent-teal); border-radius:24px; padding:3rem; max-width:500px; width:100%; text-align:center; box-shadow:0 15px 50px rgba(0,255,204,0.3);">
+      <div style="width: 80px; height: 80px; background: rgba(0,255,204,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent-teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color:#fff;">Solicitação Recebida!</h3>
+      <p style="color:var(--text-muted); margin-bottom: 2rem;">Preparamos tudo para a sua análise. Nossa equipe de engenheiros de energia entrará em contato nas próximas 2 horas comerciais.</p>
+      <button class="btn" onclick="closeModal()" style="width:100%;">Excelente, Entendi!</button>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       SCRIPTS JAVASCRIPT
+       ========================================== -->
+  <script>
+    // Injeta o mapa do Brasil estilizado nos containers designados
+    document.addEventListener("DOMContentLoaded", () => {
+      const template = document.querySelector(".fixed-map-template").innerHTML;
+      const targets = document.querySelectorAll(".map-container-target");
+      targets.forEach(target => {
+        target.innerHTML = template;
+      });
+    });
+
+    // ==========================================
+    // LÓGICA DO CARROSSEL
+    // ==========================================
+    let currentSlideIndex = 0;
+    const slides = [
+      document.getElementById("slide-geracao"),
+      document.getElementById("slide-injecao"),
+      document.getElementById("slide-economia")
+    ];
+    const dots = document.querySelectorAll(".carousel-dot");
+
+    function updateCarousel() {
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlideIndex) {
+          slide.classList.add("active");
+        } else {
+          slide.classList.remove("active");
+        }
+      });
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlideIndex) {
+          dot.classList.add("active");
+        } else {
+          dot.classList.remove("active");
+        }
+      });
+    }
+
+    function moveSlide(direction) {
+      currentSlideIndex += direction;
+      if (currentSlideIndex >= slides.length) {
+        currentSlideIndex = 0;
+      } else if (currentSlideIndex < 0) {
+        currentSlideIndex = slides.length - 1;
+      }
+      updateCarousel();
+    }
+
+    function setSlide(index) {
+      currentSlideIndex = index;
+      updateCarousel();
+    }
+
+    // Auto rotate every 8 seconds
+    let carouselInterval = setInterval(() => {
+      moveSlide(1);
+    }, 8000);
+
+    // Stop auto-rotate on hover/click interaction
+    document.querySelector(".carousel-wrapper").addEventListener("mouseenter", () => {
+      clearInterval(carouselInterval);
+    });
+
+    // ==========================================
+    // LÓGICA DO SIMULADOR
+    // ==========================================
+    let selectedState = 'GO';
+    let discountPct = 0.25;
+
+    const numInput = document.getElementById("bill-number-input");
+    const sliderInput = document.getElementById("bill-range-slider");
+    const lblDiscountPct = document.getElementById("lbl-discount-pct");
+    const lblSavingMonthly = document.getElementById("lbl-saving-monthly");
+    const lblSavingAnnual = document.getElementById("lbl-saving-annual");
+
+    // UI Buttons
+    const btnGo = document.getElementById("btn-state-go");
+    const btnPr = document.getElementById("btn-state-pr");
+    const btnTo = document.getElementById("btn-state-to");
+
+    // 3D Map Columns inside SVG
+    const pGo = document.getElementById("pillar-go");
+    const pPr = document.getElementById("pillar-pr");
+    const pTo = document.getElementById("pillar-to");
+
+    // Map lines inside SVG
+    const lineGo = document.getElementById("line-go");
+    const linePr = document.getElementById("line-pr");
+    const lineTo = document.getElementById("line-to");
+
+    // Map Floating Totems
+    const tGo = document.getElementById("totem-map-go");
+    const tPr = document.getElementById("totem-map-pr");
+    const tTo = document.getElementById("totem-map-to");
+
+    function selectState(state, discount) {
+      selectedState = state;
+      discountPct = discount;
+
+      // Update state selector UI tabs
+      [btnGo, btnPr, btnTo].forEach(btn => btn.classList.remove("active"));
+      if (state === 'GO') btnGo.classList.add("active");
+      if (state === 'PR') btnPr.classList.add("active");
+      if (state === 'TO') btnTo.classList.add("active");
+
+      // Update interactive 3D map pillars and lines
+      [pGo, pPr, pTo].forEach(p => p.classList.remove("active"));
+      [lineGo, linePr, lineTo].forEach(line => line.classList.remove("active"));
+      [tGo, tPr, tTo].forEach(totem => totem.classList.remove("active"));
+      
+      // Update pillars sizes to highlight active
+      if (state === 'GO') {
+        pGo.classList.add("active");
+        lineGo.classList.add("active");
+        tGo.classList.add("active");
+        // Update SVG structure for active look
+        pGo.querySelector("path").setAttribute("fill", "rgba(0, 255, 204, 0.15)");
+        pGo.querySelector("path").setAttribute("stroke-width", "2.5px");
+        pPr.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+        pTo.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+      } else if (state === 'PR') {
+        pPr.classList.add("active");
+        linePr.classList.add("active");
+        tPr.classList.add("active");
+        pPr.querySelector("path").setAttribute("fill", "rgba(0, 255, 204, 0.15)");
+        pPr.querySelector("path").setAttribute("stroke-width", "2.5px");
+        pGo.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+        pTo.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+      } else if (state === 'TO') {
+        pTo.classList.add("active");
+        lineTo.classList.add("active");
+        tTo.classList.add("active");
+        pTo.querySelector("path").setAttribute("fill", "rgba(0, 255, 204, 0.15)");
+        pTo.querySelector("path").setAttribute("stroke-width", "2.5px");
+        pGo.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+        pPr.querySelector("path").setAttribute("fill", "rgba(6,35,37,0.8)");
+      }
+
+      calculateSavings();
+    }
+
+    // Connect slider with inputs and trigger recalculation
+    function handleNumericInput(value) {
+      if (value < 0) return;
+      sliderInput.value = value;
+      calculateSavings();
+    }
+
+    function handleSliderInput(value) {
+      numInput.value = value;
+      calculateSavings();
+    }
+
+    function calculateSavings() {
+      const billValue = parseFloat(numInput.value) || 0;
+      const savingMonthly = billValue * discountPct;
+      const savingAnnual = savingMonthly * 12;
+
+      lblDiscountPct.innerText = `${Math.round(discountPct * 100)}%`;
+      lblSavingMonthly.innerHTML = `R$ ${savingMonthly.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} <span style="font-size: 1.2rem; font-weight:500; color:var(--text-muted);">/ mês</span>`;
+      lblSavingAnnual.innerText = `Economia anual estimada de R$ ${savingAnnual.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    // Modal Operations
+    function submitSimulation() {
+      document.getElementById("success-modal").style.display = "flex";
+    }
+
+    // Reset simulator and close modal
+    function closeModal() {
+      document.getElementById("success-modal").style.display = "none";
+    }
+
+    // Initialize simulation calculations on load
+    calculateSavings();
+  </script>
+</body>
+</html>
