@@ -1,12 +1,9 @@
-import { Home, Building2, KeyRound } from "lucide-react";
+import { MapPin } from "lucide-react";
 
-// Placeholder [ESTADOS] — ajustar conforme cobertura real (default: Goiás).
-const ESTADOS = "Goiás";
-
-const imoveis = [
-  { Icon: Home, label: "Casa" },
-  { Icon: Building2, label: "Apartamento" },
-  { Icon: KeyRound, label: "Imóvel alugado" },
+const coverage = [
+  { state: "Goiás", discount: "até 25% de desconto" },
+  { state: "Tocantins", discount: "até 23% de desconto" },
+  { state: "Paraná", discount: "até 22% de desconto" },
 ];
 
 export function Eligibility() {
@@ -14,25 +11,32 @@ export function Eligibility() {
     <section className="bg-background">
       <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
         <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-brand-navy sm:text-5xl">
-          Você já pode ser cliente BC em {ESTADOS}
+          Atendimento disponível em Goiás, Tocantins e Paraná
         </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          É necessário ser o titular da conta de luz.
+          Confira as condições de economia disponíveis para cada estado.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {imoveis.map(({ Icon, label }) => (
+          {coverage.map(({ state, discount }) => (
             <div
-              key={label}
-              className="flex flex-col items-center gap-3 rounded-2xl border border-brand-gray bg-white p-8"
+              key={state}
+              className="flex flex-col items-center gap-3 rounded-2xl border border-brand-gray bg-white p-8 shadow-sm transition-all hover:shadow-md"
             >
-              <Icon className="h-9 w-9 text-brand-teal" strokeWidth={1.75} />
-              <span className="font-display text-lg font-semibold uppercase tracking-tight text-brand-navy">
-                {label}
+              <MapPin className="h-9 w-9 text-brand-teal" strokeWidth={1.75} />
+              <span className="font-display text-2xl font-bold uppercase tracking-tight text-brand-navy">
+                {state}
+              </span>
+              <span className="text-sm font-semibold text-brand-teal uppercase tracking-wide">
+                {discount}
               </span>
             </div>
           ))}
         </div>
+
+        <p className="mt-8 text-sm text-muted-foreground">
+          É necessário ser titular ou responsável pela conta de energia para solicitar a análise.
+        </p>
       </div>
     </section>
   );

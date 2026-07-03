@@ -8,7 +8,7 @@ type SimulatorProps = {
 };
 
 export function Simulator({ openForm }: SimulatorProps) {
-  const [billValue, setBillValue] = useState(800);
+  const [billValue, setBillValue] = useState(1200);
   const [activeState, setActiveState] = useState<"GO" | "PR" | "TO">("GO");
 
   const discountMap = {
@@ -89,7 +89,7 @@ export function Simulator({ openForm }: SimulatorProps) {
                     type="number"
                     value={billValue}
                     onChange={handleNumberChange}
-                    min="100"
+                    min="800"
                     max="50000"
                     step="50"
                     className="bg-transparent border-none text-white text-3xl font-black text-right outline-none w-full"
@@ -97,9 +97,9 @@ export function Simulator({ openForm }: SimulatorProps) {
                 </div>
                 <input
                   type="range"
-                  min="100"
+                  min="800"
                   max="10000"
-                  step="50"
+                  step="100"
                   value={billValue > 10000 ? 10000 : billValue}
                   onChange={handleSliderChange}
                   className="w-full h-1.5 bg-brand-teal/10 rounded-lg appearance-none cursor-pointer accent-brand-teal"
@@ -119,6 +119,28 @@ export function Simulator({ openForm }: SimulatorProps) {
               </div>
             </div>
 
+            {/* Tabela de Estimativa */}
+            <div className="overflow-hidden rounded-2xl bg-brand-navy/60 border border-brand-teal/10">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-brand-teal/20 text-brand-gray/60">
+                    <th className="px-3 py-2 font-semibold">Conta Mensal</th>
+                    <th className="px-3 py-2 text-right font-semibold">Economia (até {Math.round(discountPct * 100)}%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[800, 1200, 2000, 5000].map((val) => (
+                    <tr key={val} className="border-b border-brand-teal/10 last:border-0 text-white/80">
+                      <td className="px-3 py-2">R$ {val.toLocaleString("pt-BR")}</td>
+                      <td className="px-3 py-2 text-right font-display font-bold text-brand-yellow">
+                        até R$ {Math.round(val * discountPct).toLocaleString("pt-BR")}/mês
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
             {/* CTA */}
             <button
               onClick={() => {
@@ -131,8 +153,8 @@ export function Simulator({ openForm }: SimulatorProps) {
               <ArrowRight className="h-5 w-5" />
             </button>
 
-            <span className="text-[10px] text-brand-gray/60 leading-normal">
-              * Valores simulados de desconto estimados com base nas tarifas médias residenciais/comerciais B1 vigentes. Sujeito a análise técnica da distribuidora.
+            <span className="text-[10px] text-brand-gray/50 leading-relaxed">
+              Condições válidas para contas a partir de R$ 800. A economia pode variar conforme análise da fatura, estado, distribuidora, bandeira tarifária, disponibilidade de créditos e condições comerciais.
             </span>
           </div>
 

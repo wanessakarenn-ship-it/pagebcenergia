@@ -18,10 +18,10 @@ import { cn } from "@/lib/utils";
 // Enquanto estiver como placeholder/vazio, o form roda em modo MOCK:
 // apenas loga o payload no console e mostra o estado de sucesso.
 // ============================================================================
-const CAPTURE_ENDPOINT = "[ENDPOINT_CAPTURE_LEAD]";
+const CAPTURE_ENDPOINT = "";
 
 // Política de privacidade — preencher antes de publicar.
-const URL_POLITICA = "[URL_POLITICA]";
+const URL_POLITICA = "#";
 
 // FLAG DE VERSÃO — alternar entre as duas LPs do brief.
 // true  -> mostra o campo de upload da fatura

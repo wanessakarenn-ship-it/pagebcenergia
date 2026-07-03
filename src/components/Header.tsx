@@ -6,12 +6,11 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/logo-bc.png.asset.json";
 
 const NAV_LINKS = [
-  { label: "Para Você", href: "#para-voce" },
-  { label: "Parceiros", href: "#parceiros" },
+  { label: "Como Funciona", href: "#como-funciona" },
+  { label: "Simulador", href: "#simulador" },
   { label: "Sobre a BC", href: "#sobre" },
+  { label: "Dúvidas", href: "#faq" },
 ];
-
-const LOGIN_ROUTE = "/entrar";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,12 +48,6 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a
-            href={LOGIN_ROUTE}
-            className="inline-flex items-center justify-center rounded-full border border-brand-teal px-5 py-2 font-display text-sm font-semibold uppercase tracking-tight text-brand-teal transition-colors hover:bg-brand-teal hover:text-white"
-          >
-            Entrar
-          </a>
           <CtaButton size="default">Quero Economizar</CtaButton>
         </div>
 
@@ -83,13 +76,6 @@ export function Header() {
                 ))}
               </nav>
               <div className="mt-6 flex flex-col gap-3">
-                <a
-                  href={LOGIN_ROUTE}
-                  onClick={() => setOpen(false)}
-                  className="inline-flex items-center justify-center rounded-full border border-brand-teal px-5 py-3 font-display text-sm font-semibold uppercase tracking-tight text-brand-teal transition-colors hover:bg-brand-teal hover:text-white"
-                >
-                  Entrar
-                </a>
                 <CtaButton size="default" className="w-full">
                   Quero Economizar
                 </CtaButton>

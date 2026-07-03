@@ -142,13 +142,12 @@ const SocialProofCarousel = ({ scrollToForm }: Props) => {
         </div>
 
         <h2 className="mb-6 max-w-4xl text-center font-display text-3xl font-extrabold uppercase leading-tight tracking-tight text-brand-navy md:text-4xl lg:text-5xl">
-          Empresas já estão reduzindo
+          Empresas já estão economizando
           <br />
-          <span className="text-brand-teal">custos com energia</span>
+          <span className="text-brand-teal">com o Grupo BC Energia</span>
         </h2>
         <p className="mb-12 max-w-2xl text-center text-lg font-light text-muted-foreground md:text-xl">
-          Veja como a tecnologia de monitoramento inteligente e fontes renováveis transformou a
-          gestão energética industrial.
+          Veja como empresas já reduziram custos com energia usando as soluções do Grupo BC Energia.
         </p>
 
         {/* Carousel */}

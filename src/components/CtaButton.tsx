@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 // Central place for the signup destination so every CTA points to the same URL.
 // Swap this for the real cadastro route/URL when it exists.
-export const SIGNUP_ROUTE = "/cadastro";
+export const SIGNUP_ROUTE = "#lead-form";
 
 type CtaButtonProps = {
   children: React.ReactNode;

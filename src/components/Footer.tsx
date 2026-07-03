@@ -4,16 +4,15 @@ import logo from "@/assets/logo-bc.png.asset.json";
 
 const menuLinks = [
   { label: "Página Inicial", href: "/" },
-  { label: "Para Você", href: "#para-voce" },
-  { label: "Parceiros", href: "#parceiros" },
-  { label: "Blog", href: "#blog" },
-  { label: "Entrar", href: "/entrar" },
-  { label: "Cadastrar", href: "/cadastro" },
+  { label: "Como Funciona", href: "#como-funciona" },
+  { label: "Simulador", href: "#simulador" },
+  { label: "Sobre nós", href: "#sobre" },
+  { label: "Perguntas Frequentes", href: "#faq" },
 ];
 
 const legalLinks = [
-  { label: "Política de Privacidade", href: "#privacidade" },
-  { label: "Termos de Uso", href: "#termos" },
+  { label: "Política de Privacidade", href: "#" },
+  { label: "Termos de Uso", href: "#" },
 ];
 
 const socials = [
@@ -64,17 +63,15 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-white/80">
               <li>Seg–Sex, 9h às 18h</li>
               <li>
-                WhatsApp Comercial
-                <br />
-                <a href={`https://wa.me/${WHATSAPP_COMERCIAL}`} className="text-white transition-colors hover:text-brand-yellow">
-                  {WHATSAPP_COMERCIAL}
-                </a>
-              </li>
-              <li>
-                WhatsApp Clientes
-                <br />
-                <a href={`https://wa.me/${WHATSAPP_CLIENTES}`} className="text-white transition-colors hover:text-brand-yellow">
-                  {WHATSAPP_CLIENTES}
+                <a
+                  href="#lead-form"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="text-white transition-colors hover:text-brand-yellow font-semibold"
+                >
+                  Fale com nossa equipe comercial
                 </a>
               </li>
             </ul>
@@ -120,7 +117,7 @@ export function Footer() {
             <img src={logo.url} alt="Grupo BC Energia" className="h-11 w-auto brightness-0 invert sm:h-12" />
           </div>
           <p className="text-xs text-white/60">
-            CNPJ 00.000.000/0001-00 · © 2026 Grupo BC Energia. Todos os direitos reservados.
+            © 2026 Grupo BC Energia. Todos os direitos reservados.
           </p>
         </div>
       </div>

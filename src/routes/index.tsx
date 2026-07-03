@@ -16,18 +16,18 @@ import { FinalCta } from "@/components/sections/FinalCta";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Consórcio BC Energia — Economize até 25% na conta de luz" },
+      { title: "Consórcio BC Energia | Economize até 25% na Conta de Luz" },
       {
         name: "description",
         content:
-          "Reduza a conta de luz da sua empresa em até 25% com energia renovável — sem placas, sem obra e sem investimento inicial. Peça a análise gratuita da sua fatura.",
+          "Reduza a conta de luz da sua empresa com energia limpa e renovável. Sem placas solares, sem obra e sem investimento inicial. Solicite sua análise gratuita.",
       },
-      { property: "og:title", content: "Consórcio BC Energia — Economize até 25% na conta de luz" },
+      { property: "og:title", content: "Consórcio BC Energia | Economize até 25% na Conta de Luz" },
       { property: "og:type", content: "website" },
       {
         property: "og:description",
         content:
-          "Reduza a conta de luz da sua empresa em até 25% com energia renovável — sem placas, sem obra e sem investimento inicial.",
+          "Reduza a conta de luz da sua empresa com energia limpa e renovável. Sem placas solares, sem obra e sem investimento inicial. Solicite sua análise gratuita.",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],
